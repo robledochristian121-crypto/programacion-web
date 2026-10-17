@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+        </div>
+      <meta charset="utf-8">
+      <title>EJERCICIO 6.21</title>
+   </head>
+   <body>
+      <h3>EJERCICIO 6.21</h3>
+      <p>Escriba una secuencia de comandos que lea un entero, determine y produzca texto de HTML5 que muestre si es par o impar. [Sugerencia: use el operador residuo.]</p>
+      <hr>
+      <script>
+         var numero;
+
+         numero = parseInt( window.prompt( "Escriba un entero:") );
+
+         if ( numero % 2 == 0 )
+            document.writeln( "<h1>" + numero + " es par</h1>" );
+
+         if ( numero % 2 != 0 )
+            document.writeln( "<h1>" + numero + " es impar</h1>" );
+      </script>
+   </body>
+</html>

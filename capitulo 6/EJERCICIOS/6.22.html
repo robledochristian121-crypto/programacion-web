@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+        </div>
+      <meta charset="utf-8">
+      <title>EJERCICIO 6.22</title>
+   </head>
+   <body>
+      <h3>EJERCICIO 6.22</h3>
+      <p>Escriba una secuencia de comandos que lea dos enteros, determine y produzca texto de HTML5 que muestre si el primero es múltiplo del segundo. [Sugerencia: use el operador residuo.]</p>
+      <hr>
+      <script>
+         var primero, segundo;
+
+         primero = parseInt( window.prompt( "Escriba el primer entero:") );
+         segundo = parseInt( window.prompt( "Escriba el segundo entero:") );
+
+         if ( primero % segundo == 0 )
+            document.writeln( "<h1>" + primero + " es múltiplo de " + segundo + "</h1>" );
+
+         if ( primero % segundo != 0 )
+            document.writeln( "<h1>" + primero + " no es múltiplo de " + segundo + "</h1>" );
+      </script>
+   </body>
+</html>

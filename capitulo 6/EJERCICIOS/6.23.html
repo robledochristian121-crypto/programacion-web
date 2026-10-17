@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+        </div>
+      <meta charset="utf-8">
+      <title>EJERCICIO 6.23</title>
+   </head>
+   <body>
+      <h3>EJERCICIO 6.23</h3>
+      <p>Escriba una secuencia de comandos que reciba tres números, determine y produzca marcado que muestre la cantidad de números negativos, positivos y ceros introducidos.</p>
+      <hr>
+      <script>
+         var x, y, z;
+         var negativos = 0, positivos = 0, ceros = 0;
+
+         x = parseFloat( window.prompt( "Escriba el primer número:") );
+         y = parseFloat( window.prompt( "Escriba el segundo número:") );
+         z = parseFloat( window.prompt( "Escriba el tercer número:") );
+
+         if ( x < 0 ) negativos = negativos + 1;
+         if ( x > 0 ) positivos = positivos + 1;
+         if ( x == 0 ) ceros = ceros + 1;
+
+         if ( y < 0 ) negativos = negativos + 1;
+         if ( y > 0 ) positivos = positivos + 1;
+         if ( y == 0 ) ceros = ceros + 1;
+
+         if ( z < 0 ) negativos = negativos + 1;
+         if ( z > 0 ) positivos = positivos + 1;
+         if ( z == 0 ) ceros = ceros + 1;
+
+         document.writeln( "<h1>Resultados</h1>" );
+         document.writeln( "<p>Negativos: " + negativos + "</p>" );
+         document.writeln( "<p>Positivos: " + positivos + "</p>" );
+         document.writeln( "<p>Ceros: " + ceros + "</p>" );
+      </script>
+   </body>
+</html>

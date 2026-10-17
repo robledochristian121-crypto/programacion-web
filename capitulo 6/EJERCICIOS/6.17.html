@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+        </div>
+      <meta charset="utf-8">
+      <title>EJERCICIO 6.17</title>
+   </head>
+   <body>
+      <h3>EJERCICIO 6.17</h3>
+      <p>Escriba una secuencia de comandos que pida al usuario que introduzca dos enteros y muestre el número más grande seguido de las palabras &quot;es mayor que&quot; en un diálogo de alerta. Si los números son iguales, imprima texto de HTML5 que muestre el mensaje &quot;Estos números son iguales&quot;.</p>
+      <hr>
+      <script>
+         var num1, num2;
+
+         num1 = parseInt( window.prompt( "Escriba el primer entero:" ) );
+         num2 = parseInt( window.prompt( "Escriba el segundo entero:" ) );
+
+         if ( num1 > num2 )
+            window.alert( num1 + " es mayor que " + num2 );
+
+         if ( num2 > num1 )
+            window.alert( num2 + " es mayor que " + num1 );
+
+         if ( num1 == num2 )
+            document.writeln( "<h1>Estos números son iguales</h1>" );
+      </script>
+   </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+        </div>
+      <meta charset="utf-8">
+      <title>EJERCICIO 6.19</title>
+   </head>
+   <body>
+      <h3>EJERCICIO 6.19</h3>
+      <p>Escriba una secuencia de comandos que obtenga del usuario el radio de un círculo y produzca texto de HTML5 que muestre el diámetro, la circunferencia y el área de ese círculo. Use el valor constante 3.14159 para π (también puede usar Math.PI).</p>
+      <hr>
+      <script>
+         var radio, diametro, circunferencia, area;
+         var PI = 3.14159;
+
+         radio = parseFloat( window.prompt( "Escriba el radio del círculo:") );
+
+         diametro = 2 * radio;
+         circunferencia = 2 * PI * radio;
+         area = PI * radio * radio;
+
+         document.writeln( "<h1>Círculo de radio " + radio + "</h1>" );
+         document.writeln( "<p>Diámetro: " + diametro + "</p>" );
+         document.writeln( "<p>Circunferencia: " + circunferencia + "</p>" );
+         document.writeln( "<p>Área: " + area + "</p>" );
+      </script>
+   </body>
+</html>

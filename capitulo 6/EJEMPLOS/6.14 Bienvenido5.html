@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <div class="reg">
+        <a class="regresar" href="ejemplos.html">⬅</a>
+        </div>
+        <meta charset="utf-8">
+        <title>USO DE OPERADORES RELACIONALES</title>
+        <script>
+            var nombre;
+            var ahora= new Date();
+            var hora = ahora.getHours();
+            nombre = window.prompt("Escriba su nombre");
+
+            if(hora < 12)
+               document.write("<h1>BUENOS DIAS, ");
+            if(hora >= 12){
+                hora = hora -12;
+            if(hora < 6 )
+                document.write("<h1>BUENAS TARDES, ");
+            if (hora >= 6)
+                document.write("<h1>BUENAS NOCHES, ");
+            }
+
+            document.writeln(nombre + ", BIENVENIDO A LA PROGRAMACIÓN EN JAVASCRIPT</h1>");
+    
+        </script>
+    </head><body></body>
+</html>

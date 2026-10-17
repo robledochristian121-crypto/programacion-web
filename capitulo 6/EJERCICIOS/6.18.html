@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+        </div>
+      <meta charset="utf-8">
+      <title>EJERCICIO 6.18</title>
+   </head>
+   <body>
+      <h3>EJERCICIO 6.18</h3>
+      <p>Escriba una secuencia de comandos que reciba tres enteros del usuario y muestre la suma, promedio, producto, menor y mayor de los números en un diálogo alert.</p>
+      <hr>
+      <script>
+         var x, y, z, suma, promedio, producto, menor, mayor;
+
+         x = parseInt( window.prompt( "Escriba el primer entero:") );
+         y = parseInt( window.prompt( "Escriba el segundo entero:") );
+         z = parseInt( window.prompt( "Escriba el tercer entero:") );
+
+         suma = x + y + z;
+         promedio = suma / 3;
+         producto = x * y * z;
+
+         menor = x;
+         if ( y < menor )
+            menor = y;
+         if ( z < menor )
+            menor = z;
+
+         mayor = x;
+         if ( y > mayor )
+            mayor = y;
+         if ( z > mayor )
+            mayor = z;
+
+         window.alert( "Suma: " + suma +
+            "\nPromedio: " + promedio +
+            "\nProducto: " + producto +
+            "\nMenor: " + menor +
+            "\nMayor: " + mayor );
+      </script>
+   </body>
+</html>

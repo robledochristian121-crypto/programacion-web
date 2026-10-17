@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+        </div>
+      <meta charset="utf-8">
+      <title>EJERCICIO 6.20</title>
+   </head>
+   <body>
+      <h3>EJERCICIO 6.20</h3>
+      <p>Escriba una secuencia de comandos que lea cinco enteros, determine y produzca marcado que muestre los enteros menor y mayor en el grupo. Use sólo las técnicas de secuencias de comandos que aprendió en este capítulo.</p>
+      <hr>
+      <script>
+         var a, b, c, d, e, menor, mayor;
+
+         a = parseInt( window.prompt( "Escriba el entero 1:") );
+         b = parseInt( window.prompt( "Escriba el entero 2:") );
+         c = parseInt( window.prompt( "Escriba el entero 3:") );
+         d = parseInt( window.prompt( "Escriba el entero 4:") );
+         e = parseInt( window.prompt( "Escriba el entero 5:") );
+
+         menor = a;
+         if ( b < menor ) menor = b;
+         if ( c < menor ) menor = c;
+         if ( d < menor ) menor = d;
+         if ( e < menor ) menor = e;
+
+         mayor = a;
+         if ( b > mayor ) mayor = b;
+         if ( c > mayor ) mayor = c;
+         if ( d > mayor ) mayor = d;
+         if ( e > mayor ) mayor = e;
+
+         document.writeln( "<h1>Resultados</h1>" );
+         document.writeln( "<p>El menor es " + menor + "</p>" );
+         document.writeln( "<p>El mayor es " + mayor + "</p>" );
+      </script>
+   </body>
+</html>

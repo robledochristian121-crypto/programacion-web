@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+        </div>
+      <meta charset="utf-8">
+      <title>EJERCICIO 6.16</title>
+   </head>
+   <body>
+      <h3>EJERCICIO 6.16</h3>
+      <p>Escriba una secuencia de comandos que pida al usuario que escriba dos números, obtenga los dos números del usuario y produzca texto que muestre la suma, producto, diferencia y cociente.</p>
+      <hr>
+      <script>
+         var primero, segundo, num1, num2;
+
+         primero = window.prompt( "Escriba el primer número:");
+         segundo = window.prompt( "Escriba el segundo número:");
+
+         num1 = parseInt( primero );
+         num2 = parseInt( segundo );
+
+         document.writeln( "<h1>Resultados</h1>" );
+         document.writeln( "<p>Suma: " + ( num1 + num2 ) + "</p>" );
+         document.writeln( "<p>Producto: " + ( num1 * num2 ) + "</p>" );
+         document.writeln( "<p>Diferencia: " + ( num1 - num2 ) + "</p>" );
+         document.writeln( "<p>Cociente: " + ( num1 / num2 ) + "</p>" );
+      </script>
+   </body>
+</html>
