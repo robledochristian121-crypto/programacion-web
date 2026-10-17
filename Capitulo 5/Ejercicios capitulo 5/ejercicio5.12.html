@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 5.12</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      margin-bottom: 5px;
+      color: #1a1a1a;
+    }
+
+    /* Subtítulo y Nombre de Autor */
+    .subtitulo {
+      font-size: 1.2rem;
+      color: #555;
+      margin-top: 0;
+      font-weight: normal;
+    }
+
+    .autor {
+      font-style: italic;
+      color: #777;
+      margin-bottom: 25px;
+    }
+
+    /* Contenedor de Texto Multicolumna (2 columnas) */
+    .articulo-columnas {
+      /* Cambio a 2 columnas */
+      column-count: 2;
+      column-gap: 30px;
+      
+      /* Incremento de grosor (4px) y color (crimson / rojo intenso) de la regla */
+      column-rule: 4px solid crimson;
+      
+      text-align: justify;
+    }
+
+    /* Imagen que flota dentro de las columnas */
+    .imagen-flotante {
+      float: left;
+      width: 180px;
+      margin: 5px 15px 10px 0;
+      border-radius: 6px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Novedades del Diseño Web Moderno</h1>
+  <p class="subtitulo">Una revisión a las potentes capacidades de maquetación en CSS3</p>
+  <div class="autor">Por: Juan Pérez</div>
+
+  <div class="articulo-columnas">
+    <img src="https://picsum.photos/id/1060/300/200" alt="Imagen descriptiva" class="imagen-flotante">
+    
+    <p>
+      El diseño de maquetación en columnas múltiples mediante CSS3 permite organizar grandes bloques de texto de manera similar a los periódicos o revistas impresas, facilitando la lectura en pantallas anchas sin comprometer la estructura semántica de la página.
+    </p>
+
+    <p>
+      Gracias a propiedades como <code>column-count</code> y <code>column-rule</code>, es posible personalizar el número de divisiones verticales, el espacio intercolumnar y las líneas divisorias decorativas con total libertad visual y respuesta adaptativa.
+    </p>
+
+    <p>
+      Al combinar las columnas múltiples con elementos flotantes mediante la propiedad <code>float</code>, el texto se ajusta automáticamente alrededor de las imágenes, creando un flujo orgánico y dinámico en la composición gráfica del documento.
+    </p>
+  </div>
+
+</body>
+</html>

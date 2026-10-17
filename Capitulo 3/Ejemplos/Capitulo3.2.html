@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>El nuevo atributo autocompleto y el elemento datalist de HTML</title>
+    </head>
+
+    <body>
+        <h1>Demo de autocomplete y datalist</h1>
+        <p>Este formulario demuestra el nuevo atributo autocomplete de HTML y el elemento datalist.</p>
+
+        <form method="post" autocomplete = "on">
+            <p><label>Primer nombre:
+                <input type = "text" id="primerNombre"
+                placeholder="Primer Nombre"/>
+                </label></p>
+                <p><label> for = "Listatexto">Mes de nacimiento:
+                    <input type = "Seleccione un mes" list = "meses"/>
+                    <datalist id="meses">
+                        <option value = "Enero">
+                        <option value = "Febrero">
+                        <option value = "Marzo">
+                        <option value = "Abril">
+                        <option value = "Mayo">
+                        <option value = "Junio">
+                        <option value = "Julio">
+                        <option value = "Agosto">
+                        <option value = "Septiembre">
+                        <option value = "Octubre">
+                        <option value = "Noviembre">
+                        <option value = "Diciembre">
+                    </datalist>
+                    </label></p>
+                    <p><input type = "submit" value = "Enviar"/>
+                        <input type = "reset" value = "Borrar"/></p>
+        </form>
+    </body>
+</html>                    

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 5.13</title>
+  <style>
+    /* Contenedor principal en orientación vertical */
+    .contenedor-flex {
+      display: flex;
+      flex-direction: column; /* Cambia la orientación a VERTICAL */
+      width: 300px;
+      gap: 15px;
+      padding: 20px;
+      background-color: #f0f0f0;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+    }
+
+    /* Elementos flex hijo */
+    .caja {
+      padding: 20px;
+      color: white;
+      font-family: sans-serif;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 5px;
+    }
+
+    .caja-1 {
+      background-color: deepskyblue;
+    }
+
+    .caja-2 {
+      background-color: mediumseagreen;
+    }
+
+    .caja-3 {
+      background-color: crimson;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Modelo de Caja Flexible (Vertical)</h2>
+
+  <div class="contenedor-flex">
+    <div class="caja caja-1">Caja 1</div>
+    <div class="caja caja-2">Caja 2</div>
+    <div class="caja caja-3">Caja 3</div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 5.9</title>
+  <style>
+    /* Área o contenedor del recorrido */
+    .contenedor {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border: 2px dashed #ccc;
+      margin: 50px auto;
+    }
+
+    /* Elemento que se va a animar */
+    .caja-animada {
+      width: 50px;
+      height: 50px;
+      background-color: deepskyblue;
+      border-radius: 8px;
+      position: absolute;
+      
+      /* Animación: nombre, duración, curva de tiempo, repeticiones */
+      animation: moverCuadrado 4s linear infinite;
+    }
+
+    /* Definición de los fotogramas clave (keyframes) para formar el patrón cuadrado */
+    @keyframes moverCuadrado {
+      0% {
+        top: 0;
+        left: 0;
+        background-color: deepskyblue;
+      }
+      25% {
+        top: 0;
+        left: 250px; /* Se mueve a la esquina superior derecha */
+        background-color: gold;
+      }
+      50% {
+        top: 250px;
+        left: 250px; /* Baja a la esquina inferior derecha */
+        background-color: crimson;
+      }
+      75% {
+        top: 250px;
+        left: 0; /* Se mueve a la esquina inferior izquierda */
+        background-color: mediumseagreen;
+      }
+      100% {
+        top: 0;
+        left: 0; /* Regresa a la esquina superior izquierda */
+        background-color: deepskyblue;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contenedor">
+    <div class="caja-animada"></div>
+  </div>
+
+</body>
+</html>

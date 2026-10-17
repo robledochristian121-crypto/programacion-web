@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 5.14</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f4f4f4;
+      margin: 0;
+    }
+
+    /* Contenedor de la galería */
+    .galeria {
+      display: flex;
+      gap: 20px;
+    }
+
+    /* Estilo de cada imagen */
+    .galeria img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      
+      /* Transición suave para la transformación */
+      transition: transform 0.3s ease;
+    }
+
+    /* Transformación al pasar el ratón (:hover) */
+    .galeria img:hover {
+      /* Aumenta el tamaño en un 20% (escala 1.2) */
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="galeria">
+    <img src="https://picsum.photos/id/1015/300/300" alt="Imagen 1">
+    <img src="https://picsum.photos/id/1025/300/300" alt="Imagen 2">
+    <img src="https://picsum.photos/id/1035/300/300" alt="Imagen 3">
+    <img src="https://picsum.photos/id/1040/300/300" alt="Imagen 4">
+  </div>
+
+</body>
+</html>

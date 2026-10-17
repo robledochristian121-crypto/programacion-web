@@ -1,0 +1,67 @@
+<DOCTYPE html>
+    <html>
+        <head>
+            <meta charset = "utf-8">
+            <title>Nuevos tipos de input de HTML5</title>
+        </head>
+
+        <body>
+            <h1>Demo de nuevos tipos de input de HTML5</h1>
+            <p>Este formulario demuestra los nuevos tipos de elementos input de HTML5 y los atrinutos placeholder, required y autofocus.
+            </p>
+
+            <form method = "post" action = "http://www.deitel.com">
+                <p> 
+                    <label>Color:
+                        <input type = "color" autofocus />
+                        (Codigo hexadecimal como #ADD8E6)
+                    </label>
+                </p>
+                <p>
+                    <label>Fecha:
+                        <input type = "data" />
+                        (aaaa-mm-dd)
+                    </label>
+                </p>
+                <p>
+                    <label>Hora y fecha-local:
+                        <input type = "datetime-local" />
+                        (aaaa-mm-ddThh:mm, como 2012-01-27T03:15)
+                    </label>
+                </p>
+                <p>
+                    <label>Mes:
+                        <input type = "month" /> (aaaa-mm)
+                    </label>
+                </p>
+                <p>
+                    <label>Numero
+                        <input type = "number"
+                        min = "0"
+                        max = "7"
+                        step = "1"
+                        value = "4" />
+                    </label>
+                </p>
+                <p>
+                    <label>URL:
+                        <input type = "url"
+                        placeholder = "http://wwwnombredominio.com" />
+                        (http://www.nombredominio.com)
+                    </label>
+                </p>
+                <p>
+                    <label>Semana:
+                        <input type = "week" />
+                        (aaaa-wnn, tal como 2012-W01)
+                    </label>
+                </p>
+                <p>
+                    <input type = "submit" value = "Enviar" />
+                    <input type = "reset" value = "Borrar" />
+                </p
+                >
+            </form>
+        </body>
+    </html>
+    

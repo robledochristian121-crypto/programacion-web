@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de HTML5</title>
+</head>
+<body>
+
+    <h1>Ejercicios y Componentes de HTML5</h1>
+
+    <section>
+        <h2>a) Elemento meter</h2>
+        <p>
+            Calificación promedio: 
+            <meter value="7" min="1" max="10">7 de 10</meter> 
+            7 de 10
+        </p>
+    </section>
+
+    <section>
+        <h2>b) Elemento details</h2>
+        <details>
+            <summary>Resultados de la encuesta</summary>
+            <p>Esta encuesta evalúa la satisfacción de los estudiantes respecto a la calidad y variedad de los alimentos servidos en la cafetería institucional.</p>
+        </details>
+    </section>
+
+    <section>
+        <h2>Formulario de Registro y Encuesta (Puntos c, d, e, f, g)</h2>
+        
+        <form action="#" method="post" autocomplete="off">
+            
+            <div>
+                <label for="nombre-c">Primer nombre (con label):</label>
+                <input type="text" id="nombre-c" name="nombre-c" autofocus>
+            </div>
+
+            <br>
+
+            <div>
+                <input type="text" id="nombre-d" name="nombre-d" placeholder="Primer nombre (con placeholder)" autofocus>
+            </div>
+
+            <br>
+
+            <div>
+                <label for="estado">Seleccione un estado:</label>
+                <input type="text" id="estado" name="estado" list="lista-estados">
+                <datalist id="lista-estados">
+                    <option value="Jalisco">
+                    <option value="Nuevo León">
+                    <option value="Puebla">
+                    <option value="Veracruz">
+                    <option value="Yucatán">
+                </datalist>
+            </div>
+
+            <br>
+
+            <div>
+                <label for="escala">Nivel de satisfacción (1 al 100):</label>
+                <input type="range" id="escala" name="escala" min="1" max="100">
+            </div>
+
+            <br>
+            
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>h) Elemento mark</h2>
+        <p>
+            Se pidió a los estudiantes que calificaran los alimentos en la cafetería. 
+            <mark>En una escala del 1 al 10. El resultado promedio fue 7.</mark>
+        </p>
+    </section>
+
+</body>
+</html>

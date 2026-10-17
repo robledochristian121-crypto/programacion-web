@@ -1,0 +1,25 @@
+/* Ejercicio 4.9: estilos_boton.css */
+div.boton-nav {
+    width: 10em;
+    padding: 0.5em;
+    text-align: center;
+    background-color: RoyalBlue;
+    border: 2px solid DarkBlue;
+    font-family: arial, sans-serif;
+    font-weight: bold;
+}
+
+div.boton-nav a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+div.boton-nav:hover {
+    background-color: PowderBlue;
+    border-color: RoyalBlue;
+}
+
+div.boton-nav:hover a {
+    color: black;
+}

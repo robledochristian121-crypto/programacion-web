@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 4.7 - Columnas Flotantes</title>
+    <style type="text/css">
+        header {
+            background-color: SkyBlue;
+            border: 2px solid SteelBlue;
+            padding: 10px;
+            text-align: center;
+            font-family: arial, sans-serif;
+            margin-bottom: 10px;
+        }
+        .columna {
+            float: left;
+            width: 48%;
+            margin: 1%;
+            padding: 10px;
+            background-color: LightGrey;
+            border: 1px solid Gray;
+            box-sizing: border-box;
+            font-family: verdana, sans-serif;
+        }
+        .contenedor {
+            overflow: auto; /* Mantiene la caja receptora del contenedor flotante */
+        }
+    </style>
+</head>
+<body>
+   <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+    <header>
+        <h1>Encabezado del Sitio</h1>
+    </header>
+
+    <div class="contenedor">
+        <p class="columna">
+            Este es el primer párrafo alineado a la izquierda mediante la propiedad 
+            <code>float: left</code>. Funciona como la primera columna del diseño.
+        </p>
+        <p class="columna">
+            Este es el segundo párrafo ubicado a la derecha del primero. 
+            Al tener un ancho relativo y margen, se coloca de manera contigua.
+        </p>
+    </div>
+
+</body>
+</html>

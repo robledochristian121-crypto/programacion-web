@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejericio 5.16</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 15px;
+    }
+
+    /* Estructura Multicolumna por defecto (Pantallas grandes/Escritorio) */
+    .contenido-principal {
+      column-count: 3;
+      column-gap: 30px;
+      column-rule: 2px solid #007acc;
+      text-align: justify;
+    }
+
+    .tarjeta {
+      break-inside: avoid;
+      background-color: #f9f9f9;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .tarjeta h2 {
+      margin-top: 0;
+      color: #007acc;
+    }
+
+    /* MEDIA QUERY: Ajuste para pantallas medianas (Tablets <= 768px) */
+    @media (max-width: 768px) {
+      .contenido-principal {
+        column-count: 2; /* Reduce a 2 columnas */
+      }
+    }
+
+    /* MEDIA QUERY REQUERIDA: Dispositivos móviles (Anchura máxima de 480px) */
+    @media (max-width: 480px) {
+      .contenido-principal {
+        column-count: 1; /* Pasa a 1 sola columna */
+        column-rule: none; /* Elimina la regla divisoria en móviles */
+      }
+
+      body {
+        padding: 0 10px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Portal de Noticias de Tecnología</h1>
+    <p>Diseño adaptativo con CSS3 y Media Queries</p>
+  </header>
+
+  <main class="contenido-principal">
+    <article class="tarjeta">
+      <h2>Inteligencia Artificial</h2>
+      <p>
+        Los avances en el procesamiento del lenguaje natural y el aprendizaje profundo están transformando la forma en que interactuamos con el software cotidiano, automatizando tareas complejas y optimizando procesos en diversos sectores industriales.
+      </p>
+    </article>
+
+    <article class="tarjeta">
+      <h2>Desarrollo Web</h2>
+      <p>
+        CSS3 y las consultas de medios (media queries) permiten crear experiencias de usuario completamente fluidas. Una misma estructura HTML puede reorganizarse dinámicamente según el tamaño de la pantalla del dispositivo.
+      </p>
+    </article>
+
+    <article class="tarjeta">
+      <h2>Dispositivos Móviles</h2>
+      <p>
+        El enfoque "Mobile-First" garantiza que los sitios web carguen eficientemente en teléfonos inteligentes con pantallas pequeñas antes de expandir su diseño hacia monitores de escritorio con múltiples columnas.
+      </p>
+    </article>
+  </main>
+
+</body>
+</html>

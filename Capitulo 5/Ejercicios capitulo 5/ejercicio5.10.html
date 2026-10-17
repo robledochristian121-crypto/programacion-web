@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 5.10</title>
+  <style>
+    .contenedor {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    /* Elemento que se va a inclinar */
+    .caja-skew {
+      width: 150px;
+      height: 150px;
+      background-color: steelblue;
+      color: white;
+      font-family: sans-serif;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+      /* Configuración de la animación */
+      animation: inclinarAlternado 3s ease-in-out infinite alternate;
+    }
+
+    /* Definición de los fotogramas clave para inclinar en X e Y */
+    @keyframes inclinarAlternado {
+      0% {
+        /* Inclinar de arriba hacia abajo (eje Y) 30 grados */
+        transform: skewY(30deg);
+      }
+      100% {
+        /* Inclinar de izquierda a derecha (eje X) 30 grados */
+        transform: skewX(30deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contenedor">
+    <div class="caja-skew">Inclinación</div>
+  </div>
+
+</body>
+</html>
