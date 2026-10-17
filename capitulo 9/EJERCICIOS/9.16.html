@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+        <meta charset="utf-8">
+        <title>EJERCICIO</title>
+        <script>
+
+            function mostrarDigitos( numero )
+            {
+                var divisor = 10000;
+                var salida = "";
+
+                // omitir los ceros a la izquierda
+                while ( divisor > numero )
+                    divisor = Math.floor( divisor / 10 );
+
+                while ( divisor >= 1 )
+                {
+                    salida += Math.floor( numero / divisor ) + "&nbsp;&nbsp;";
+                    numero = numero % divisor;
+                    divisor = Math.floor( divisor / 10 );
+                }
+
+                return salida;
+            }
+
+            function iniciar()
+            {
+                var entrada = parseInt( window.prompt( "Escriba un entero entre 1 y 99999:", "4562" ) );
+                document.getElementById( "resultado" ).innerHTML = mostrarDigitos( entrada );
+            }
+
+            window.addEventListener( "load", iniciar, false );
+        </script>
+    </head>
+    <body>
+    <h3>EJERCICIO 9.16</h3>
+    <p>Escriba segmentos de programa que realicen cada una de las siguientes tareas:</p>
+    <ul>
+        <li>a) Calcule la parte entera del cociente cuando el entero a se divide entre el entero b.<br>
+        <em><strong>Math.floor( a / b );</strong></em></li>
+        <li>b) Calcule el residuo entero cuando el entero a se divide entre el entero b.<br>
+        <em><strong>a % b;</strong></em></li>
+        <li>c) Use las piezas de programa que se desarrollaron en las partes (a) y (b) para escribir una función llamada mostrarDigitos que reciba un entero entre 1 y 99999, para luego imprimirlo como una serie de dígitos, de los cuales cada par se separa mediante dos espacios. Por ejemplo, el entero 4562 debería imprimirse como 4 5 6 2.<br>
+        <em><strong>function mostrarDigitos( numero )<br>
+        {<br>
+        &nbsp;&nbsp;&nbsp;var divisor = 10000;<br>
+        &nbsp;&nbsp;&nbsp;var salida = "";<br>
+        &nbsp;&nbsp;&nbsp;while ( divisor &gt; numero )<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;divisor = Math.floor( divisor / 10 );<br>
+        &nbsp;&nbsp;&nbsp;while ( divisor &gt;= 1 )<br>
+        &nbsp;&nbsp;&nbsp;{<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;salida += Math.floor( numero / divisor ) + "&amp;nbsp;&amp;nbsp;";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;numero = numero % divisor;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;divisor = Math.floor( divisor / 10 );<br>
+        &nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;return salida;<br>
+        }</strong></em></li>
+        <li>d) Incorpore la función desarrollada en la parte (c) en una secuencia de comandos que reciba un entero de un diálogo prompt e invoque mostrarDigitos para pasar a la función el entero introducido.<br>
+        <em><strong id = "resultado"></strong></em></li>
+    </ul>
+    </body>
+</html>

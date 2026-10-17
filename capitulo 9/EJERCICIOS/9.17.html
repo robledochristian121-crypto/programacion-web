@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>   
+    <div class="reg">
+        <a class="regresar" href="../capitulo9.html">⬅</a>
+    </div>
+        <meta charset="utf-8">
+        <title>EJERCICIO</title>
+        <script>
+
+            function Celsius( F )
+            {
+                return 5.0 / 9.0 * ( F - 32 );
+            }
+
+            function fahrenheit( C )
+            {
+                return 9.0 / 5.0 * C + 32;
+            }
+
+            function aCelsius()
+            {
+                var F = parseFloat( document.getElementById( "campoTemp" ).value );
+                document.getElementById( "resultado" ).innerHTML =
+                    "<em><strong>" + F + " °F equivalen a " + Celsius( F ).toFixed( 2 ) + " °C</strong></em>";
+            }
+
+            function aFahrenheit()
+            {
+                var C = parseFloat( document.getElementById( "campoTemp" ).value );
+                document.getElementById( "resultado" ).innerHTML =
+                    "<em><strong>" + C + " °C equivalen a " + fahrenheit( C ).toFixed( 2 ) + " °F</strong></em>";
+            }
+
+            function iniciar()
+            {
+                document.getElementById( "botonCelsius" ).addEventListener( "click", aCelsius, false );
+                document.getElementById( "botonFahrenheit" ).addEventListener( "click", aFahrenheit, false );
+            }
+
+            window.addEventListener( "load", iniciar, false );
+        </script>
+    </head>
+    <body>
+    <h3>EJERCICIO 9.17</h3>
+    <p>Implemente las siguientes funciones: a) La función Celsius devuelve el equivalente en Celsius de una temperatura en Fahrenheit, mediante el cálculo C = 5.0 / 9.0 * ( F - 32 ); b) La función fahrenheit devuelve el equivalente en Fahrenheit de una temperatura en Celsius, mediante el cálculo F = 9.0 / 5.0 * C + 32; c) Use estas funciones para escribir una secuencia de comandos que permita al usuario introducir una temperatura en Fahrenheit o Celsius y muestre el equivalente en Celsius o Fahrenheit. Su documento de HTML5 debe contener dos botones: uno para iniciar la conversión de Fahrenheit a Celsius y otro para iniciar la conversión de Celsius a Fahrenheit.</p>
+    <form action = "#">
+        <p><label>Temperatura: <input id = "campoTemp" type = "number" step = "any"></label></p>
+        <p><input id = "botonCelsius" type = "button" value = "Fahrenheit a Celsius">
+        <input id = "botonFahrenheit" type = "button" value = "Celsius a Fahrenheit"></p>
+    </form>
+    <p id = "resultado"></p>
+    </body>
+</html>

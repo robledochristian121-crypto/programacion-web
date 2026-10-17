@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+        <meta charset="utf-8">
+        <title>EJERCICIO</title>
+        
+    </head>
+    <body>
+    <h3>EJERCICIO 9.15</h3>
+    <p>Escriba una secuencia de comandos que reciba enteros (uno a la vez) y los pase a la función esPar, que utiliza el operador módulo para determinar si un entero es par. La función debe recibir un argumento entero y devolver true si el entero es par, y false en caso contrario. Use los ciclos controlados por centinela y un diálogo prompt.</p>
+    <ul>
+    <script>
+
+        function esPar( numero )
+        {
+            return numero % 2 == 0;
+        }
+
+        var numero = parseInt( window.prompt( "Escriba un entero (-1 para salir):", "0" ) );
+
+        while ( numero != -1 )
+        {
+            if ( esPar( numero ) )
+                document.writeln( "<li>" + numero + ": <em><strong>es par</strong></em></li>" );
+            else
+                document.writeln( "<li>" + numero + ": <em><strong>no es par</strong></em></li>" );
+
+            numero = parseInt( window.prompt( "Escriba un entero (-1 para salir):", "0" ) );
+        }
+
+    </script>
+    </ul>
+    </body>
+</html>

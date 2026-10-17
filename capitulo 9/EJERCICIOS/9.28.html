@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+        <meta charset="utf-8">
+        <title>EJERCICIO</title>
+        <style type = "text/css">
+            p.rojo { color: red }
+            img    { width: 54px; height: 54px; }
+            div.caja { border: 5px ridge royalblue;
+                     padding: 10px; width: 120px;
+                     margin-bottom: 10px; }
+            .punto { margin: 0px; }
+        </style>
+        <script>
+
+            var puntoDado1Img;
+            var puntoDado2Img;
+            var tiroDado1Img;
+            var tiroDado2Img;
+            var mensajes;
+            var botonJugar;
+            var botonTirar;
+
+            var miPunto;
+            var valorDado1;
+            var valorDado2;
+            var saldoBanco = 1000;
+            var apuesta = 0;
+
+            // función separada que elige al azar la frase de conversación
+            function conversacion()
+            {
+                switch ( Math.floor( 1 + Math.random() * 4 ) )
+                {
+                    case 1: return "¿Así que se va a quedar en bancarrota?";
+                    case 2: return "¡Vamos, arriésguese!";
+                    case 3: return "¡Está teniendo éxito!";
+                    case 4: return "¡Ahora es momento de cambiar sus fichas!";
+                }
+            }
+
+            function mostrarSaldo()
+            {
+                document.getElementById( "saldo" ).innerHTML = "Saldo del banco: $" + saldoBanco;
+            }
+
+            function ganar()
+            {
+                saldoBanco += apuesta;
+                mostrarSaldo();
+                mensajes.innerHTML = "Ha ganado. " + conversacion() +
+                    " Haga clic en Jugar para jugar de nuevo.";
+                botonTirar.disabled = true;
+                botonJugar.disabled = false;
+            }
+
+            function perder()
+            {
+                saldoBanco -= apuesta;
+                mostrarSaldo();
+
+                if ( saldoBanco <= 0 )
+                {
+                    mensajes.innerHTML = "¡Lo siento. Está en bancarrota!";
+                    botonJugar.disabled = true;
+                }
+                else
+                {
+                    mensajes.innerHTML = "Lo siento. Usted pierde. " + conversacion() +
+                        " Haga clic en Jugar para jugar de nuevo.";
+                    botonJugar.disabled = false;
+                }
+
+                botonTirar.disabled = true;
+            }
+
+            function iniciarJuego()
+            {
+                var entrada = parseFloat( document.getElementById( "campoApuesta" ).value );
+
+                // revisar que la apuesta sea válida
+                if ( isNaN( entrada ) || entrada <= 0 || entrada > saldoBanco )
+                {
+                    mensajes.innerHTML = "Apuesta no válida. Escriba una apuesta mayor que 0 y menor o igual que su saldo.";
+                    return;
+                }
+
+                apuesta = entrada;
+
+                botonTirar.disabled = true;
+                establecerImagen( puntoDado1Img );
+                establecerImagen( puntoDado2Img );
+                establecerImagen( tiroDado1Img );
+                establecerImagen( tiroDado2Img );
+
+                miPunto = 0;
+                primerTiro();
+            }
+
+            function primerTiro()
+            {
+                var sumaDeDados = tirarDados();
+
+                switch ( sumaDeDados )
+                {
+                    case 7: case 11:
+                        ganar();
+                        break;
+                    case 2: case 3: case 12:
+                        perder();
+                        break;
+                    default:
+                        miPunto = sumaDeDados;
+                        establecerImagen( puntoDado1Img, valorDado1 );
+                        establecerImagen( puntoDado2Img, valorDado2 );
+                        mensajes.innerHTML = "Tire de nuevo";
+                        botonTirar.disabled = false;
+                        botonJugar.disabled = true;
+                        break;
+                }
+            }
+
+            function tirarDeNuevo()
+            {
+                var sumaDeDados = tirarDados();
+
+                if ( sumaDeDados == miPunto )
+                    ganar();
+                else if ( sumaDeDados == 7 )
+                    perder();
+            }
+
+            function tirarDados()
+            {
+                valorDado1 = Math.floor( 1 + Math.random() * 6 );
+                valorDado2 = Math.floor( 1 + Math.random() * 6 );
+                establecerImagen( tiroDado1Img, valorDado1 );
+                establecerImagen( tiroDado2Img, valorDado2 );
+                return valorDado1 + valorDado2;
+            }
+
+            function establecerImagen( imgDado, valorDado )
+            {
+                if ( isFinite( valorDado ) )
+                    imgDado.src = "imag/dado" + valorDado + ".png";
+                else
+                    imgDado.src = "imag/blanco.png";
+            }
+
+            function iniciar()
+            {
+                puntoDado1Img = document.getElementById( "puntoDado1" );
+                puntoDado2Img = document.getElementById( "puntoDado2" );
+                tiroDado1Img = document.getElementById( "tiroDado1" );
+                tiroDado2Img = document.getElementById( "tiroDado2" );
+                mensajes = document.getElementById( "mensajes" );
+                botonJugar = document.getElementById( "jugar" );
+                botonTirar = document.getElementById( "tirar" );
+
+                botonJugar.addEventListener( "click", iniciarJuego, false );
+                botonTirar.addEventListener( "click", tirarDeNuevo, false );
+                botonTirar.disabled = true;
+                mostrarSaldo();
+            }
+
+            window.addEventListener( "load", iniciar, false );
+        </script>
+    </head>
+    <body>
+    <h3>EJERCICIO 9.28</h3>
+    <p>Modifique el programa de Craps de la figura 9.7 para permitir las apuestas. Inicialice la variable saldoBanco en 1000 dólares. Pida al jugador que introduzca una apuesta. Revise si la apuesta es menor o igual que saldoBanco y, si no es así, haga que el usuario vuelva a introducir la apuesta hasta que se introduzca una válida. Después de introducir una apuesta válida, ejecute un juego de Craps. Si el jugador gana, aumente el saldoBanco con base en la apuesta, imprima el nuevo saldoBanco, revise si saldoBanco es cero y, de ser así, imprima el mensaje ¡Lo siento. Está en bancarrota!. A medida que el juego progrese, imprima varios mensajes para crear conversación, como ¿Así que se va a quedar en bancarrota?, ¡Vamos, arriésguese! o ¡Está teniendo éxito!. ¡Ahora es momento de cambiar sus fichas!. Implemente la conversación como una función separada que seleccione al azar la cadena a mostrar.</p>
+    <p id = "saldo"></p>
+    <div class = "caja" id = "puntoDiv">
+        <p class = "punto">El punto es:</p>
+        <img id = "puntoDado1" src = "imag/blanco.png" alt = "Dado 1 de valor de punto">
+        <img id = "puntoDado2" src = "imag/blanco.png" alt = "Dado 2 de valor de punto">
+    </div>
+    <div class = "caja">
+        <img id = "tiroDado1" src = "imag/blanco.png" alt = "Dado 1 de valor de tiro">
+        <img id = "tiroDado2" src = "imag/blanco.png" alt = "Dado 2 de valor de tiro">
+    </div>
+    <form action = "#">
+        <p><label>Apuesta: $<input id = "campoApuesta" type = "number" min = "1" value = "10"></label></p>
+        <input id = "jugar" type = "button" value = "Jugar">
+        <input id = "tirar" type = "button" value = "Tirar">
+    </form>
+    <p id = "mensajes" class = "rojo"><em><strong>Haga clic en Jugar para iniciar el juego</strong></em></p>
+    </body>
+</html>

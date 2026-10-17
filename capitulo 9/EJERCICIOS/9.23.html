@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+        <meta charset="utf-8">
+        <title>EJERCICIO</title>
+        <script>
+
+            var factor1;
+            var factor2;
+
+            function nuevaPregunta()
+            {
+                factor1 = Math.floor( 1 + Math.random() * 9 );
+                factor2 = Math.floor( 1 + Math.random() * 9 );
+                document.getElementById( "pregunta" ).innerHTML =
+                    "¿Cuánto es " + factor1 + " por " + factor2 + "?";
+                document.getElementById( "campoRespuesta" ).value = "";
+            }
+
+            function respuestaCorrecta()
+            {
+                switch ( Math.floor( 1 + Math.random() * 4 ) )
+                {
+                    case 1: return "Muy bien.";
+                    case 2: return "Excelente.";
+                    case 3: return "Buen trabajo.";
+                    case 4: return "Siga así.";
+                }
+            }
+
+            function respuestaIncorrecta()
+            {
+                switch ( Math.floor( 1 + Math.random() * 4 ) )
+                {
+                    case 1: return "No. Intente de nuevo";
+                    case 2: return "Equivocado. Trate una vez más.";
+                    case 3: return "No se dé por vencido.";
+                    case 4: return "No. Siga intentando.";
+                }
+            }
+
+            function revisar()
+            {
+                var respuesta = parseInt( document.getElementById( "campoRespuesta" ).value );
+
+                if ( respuesta == factor1 * factor2 )
+                {
+                    document.getElementById( "mensaje" ).innerHTML = "<em><strong>" + respuestaCorrecta() + "</strong></em>";
+                    nuevaPregunta();
+                }
+                else
+                {
+                    document.getElementById( "mensaje" ).innerHTML = "<em><strong>" + respuestaIncorrecta() + "</strong></em>";
+                    document.getElementById( "campoRespuesta" ).value = "";
+                }
+            }
+
+            function iniciar()
+            {
+                document.getElementById( "botonRevisar" ).addEventListener( "click", revisar, false );
+                nuevaPregunta();
+            }
+
+            window.addEventListener( "load", iniciar, false );
+        </script>
+    </head>
+    <body>
+    <h3>EJERCICIO 9.23</h3>
+    <p>Modifique el programa del ejercicio 9.22 para que imprima una variedad de contenido para cada respuesta correcta y cada respuesta incorrecta. El conjunto de respuestas correctas es: Muy bien. / Excelente. / Buen trabajo. / Siga así. El conjunto de respuestas incorrectas es: No. Intente de nuevo / Equivocado. Trate una vez más. / No se dé por vencido. / No. Siga intentando. Use la generación de números aleatorios para elegir un número del 1 al 4 que se utilice para seleccionar una respuesta apropiada a cada cuestión. Use una instrucción switch para emitir las respuestas.</p>
+    <form action = "#">
+        <p id = "pregunta"></p>
+        <p><input id = "campoRespuesta" type = "text">
+        <input id = "botonRevisar" type = "button" value = "Revisar"></p>
+    </form>
+    <p id = "mensaje"></p>
+    </body>
+</html>

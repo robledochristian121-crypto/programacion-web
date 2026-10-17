@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+        <meta charset="utf-8">
+        <title>EJERCICIO</title>
+        <script>
+
+            var numeroSecreto;
+            var intentos = 0;
+
+            function nuevoNumero()
+            {
+                numeroSecreto = Math.floor( 1 + Math.random() * 1000 );
+                intentos = 0;
+            }
+
+            function revisar()
+            {
+                var intento = parseInt( document.getElementById( "campoIntento" ).value );
+                var mensaje;
+
+                ++intentos;
+
+                if ( intento == numeroSecreto )
+                {
+                    mensaje = "Felicidades. ¡Adivinó el número!<br>";
+
+                    if ( intentos < 10 )
+                        mensaje += "¡Conoce el secreto o tuvo suerte!";
+                    else if ( intentos == 10 )
+                        mensaje += "¡Entonces sí conoce el secreto!";
+                    else
+                        mensaje += "¡Debería poder hacerlo mejor!";
+
+                    nuevoNumero();
+                }
+                else if ( intento > numeroSecreto )
+                    mensaje = "Demasiado alto. Intente de nuevo.";
+                else
+                    mensaje = "Demasiado bajo. Intente de nuevo.";
+
+                document.getElementById( "campoIntento" ).value = "";
+                document.getElementById( "mensaje" ).innerHTML = "<em><strong>" + mensaje + "</strong></em>";
+            }
+
+            function iniciar()
+            {
+                document.getElementById( "botonRevisar" ).addEventListener( "click", revisar, false );
+                nuevoNumero();
+            }
+
+            window.addEventListener( "load", iniciar, false );
+        </script>
+    </head>
+    <body>
+    <h3>EJERCICIO 9.26</h3>
+    <p>Modifique el programa del ejercicio 9.25 para que cuente el número de intentos realizados por el jugador. Si el número es 10 o menos, muestre ¡Conoce el secreto o tuvo suerte! Si el jugador adivina el número en 10 intentos, muestre ¡Entonces sí conoce el secreto! Si el jugador realiza más de 10 intentos, muestre ¡Debería poder hacerlo mejor! ¿Por qué no debe tomar más de 10 intentos? Bueno, con cada intento correcto, el jugador debería ser capaz de eliminar la mitad de los números. Ahora muestre por qué es posible adivinar cualquier número entre 1 y 1000 en 10 intentos o menos.</p>
+    <ul>
+        <li><em><strong>Cada intento elimina la mitad de los números posibles: 1000 → 500 → 250 → 125 → 63 → 32 → 16 → 8 → 4 → 2 → 1. Después de 10 intentos solo queda un número, por eso siempre se puede adivinar en 10 intentos o menos (2 elevado a la 10 = 1024, que es mayor que 1000).</strong></em></li>
+    </ul>
+    <form action = "#">
+        <p>Adivine un número entre 1 y 1000</p>
+        <p><input id = "campoIntento" type = "text">
+        <input id = "botonRevisar" type = "button" value = "Enviar"></p>
+    </form>
+    <p id = "mensaje"></p>
+    </body>
+</html>

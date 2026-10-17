@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<!-- Fig. 9.2: CuadradoEnt.html -->
+<!-- Función cuadrado definida por el programador. -->
+<html>
+  <head>
+    <div class="reg">
+        <a class="regresar" href="ejemplos.html">⬅</a>
+    </div>
+      <meta charset = "utf-8">
+      <title>Una función cuadrado definida por el programador</title>
+      <style type = "text/css">
+         p { margin: 0; }
+      </style>
+      <script>
+
+         document.writeln( "<h1>Obtener el cuadrado de los números del 1 al 10</h1>" );
+
+         // obtener el cuadrado de los números del 1 al 10
+         for ( var x = 1; x <= 10; ++x )
+            document.writeln( "<p>El cuadrado de " + x + " es " +
+               cuadrado( x ) + "</p>" );
+
+         // El cuerpo de la siguiente definición de la función cuadrado se ejecuta
+         // sólo cuando la función se llama de manera explícita como en la línea 19
+         function cuadrado( y )
+         {
+            return y * y;
+         } // fin de la función cuadrado
+
+      </script>
+   </head><body></body> <!--el elemento body está vacío -->
+</html>

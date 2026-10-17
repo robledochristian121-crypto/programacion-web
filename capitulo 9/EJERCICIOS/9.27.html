@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+        <meta charset="utf-8">
+        <title>EJERCICIO</title>
+        <script>
+
+            var nivel = 1;
+            var tipo = 1;
+            var numero1;
+            var numero2;
+            var operador;
+            var resultadoCorrecto;
+
+            function numeroAleatorio()
+            {
+                // números de hasta "nivel" dígitos
+                return Math.floor( 1 + Math.random() * ( Math.pow( 10, nivel ) - 1 ) );
+            }
+
+            function nuevaPregunta()
+            {
+                var tipoActual = tipo;
+
+                if ( tipo == 5 )
+                    tipoActual = Math.floor( 1 + Math.random() * 4 );
+
+                numero1 = numeroAleatorio();
+                numero2 = numeroAleatorio();
+
+                switch ( tipoActual )
+                {
+                    case 1:
+                        operador = "más";
+                        resultadoCorrecto = numero1 + numero2;
+                        break;
+                    case 2:
+                        operador = "menos";
+                        resultadoCorrecto = numero1 - numero2;
+                        break;
+                    case 3:
+                        operador = "por";
+                        resultadoCorrecto = numero1 * numero2;
+                        break;
+                    case 4:
+                        // división exacta: se multiplica para que el resultado sea entero
+                        resultadoCorrecto = numero1;
+                        numero1 = numero1 * numero2;
+                        operador = "entre";
+                        break;
+                }
+
+                document.getElementById( "pregunta" ).innerHTML =
+                    "¿Cuánto es " + numero1 + " " + operador + " " + numero2 + "?";
+                document.getElementById( "campoRespuesta" ).value = "";
+            }
+
+            function comenzar()
+            {
+                nivel = parseInt( document.getElementById( "campoNivel" ).value );
+                tipo = parseInt( document.getElementById( "campoTipo" ).value );
+                nuevaPregunta();
+            }
+
+            function revisar()
+            {
+                var respuesta = parseInt( document.getElementById( "campoRespuesta" ).value );
+
+                if ( respuesta == resultadoCorrecto )
+                {
+                    document.getElementById( "mensaje" ).innerHTML = "<em><strong>Muy bien</strong></em>";
+                    nuevaPregunta();
+                }
+                else
+                {
+                    document.getElementById( "mensaje" ).innerHTML = "<em><strong>No. Intente de nuevo.</strong></em>";
+                    document.getElementById( "campoRespuesta" ).value = "";
+                }
+            }
+
+            function iniciar()
+            {
+                document.getElementById( "botonComenzar" ).addEventListener( "click", comenzar, false );
+                document.getElementById( "botonRevisar" ).addEventListener( "click", revisar, false );
+            }
+
+            window.addEventListener( "load", iniciar, false );
+        </script>
+    </head>
+    <body>
+    <h3>EJERCICIO 9.27</h3>
+    <p>(Proyecto) Los ejercicios 9.22 al 9.24 desarrollaron un programa de instrucción asistida por computadora para enseñar a un estudiante de primaria a multiplicar. Este ejercicio sugiere mejoras a ese programa. a) Modifique el programa para que permita al usuario introducir la capacidad de nivel de grado. Un nivel de grado de 1 significa que usa dígitos de un solo número en los problemas, un nivel de grado de 2 significa que usa números de hasta dos dígitos, y así en lo sucesivo. b) Modifique el programa para permitir al usuario elegir el tipo de problemas aritméticos que desea estudiar. Una opción de 1 significa sólo problemas de suma, 2 significa sólo problemas de resta, 3 significa sólo problemas de multiplicación, 4 significa sólo problemas de división y 5 significa entremezclar al azar problemas de todos estos tipos.</p>
+    <form action = "#">
+        <p><label>Nivel de grado (1, 2, 3...): <input id = "campoNivel" type = "number" min = "1" value = "1"></label></p>
+        <p><label>Tipo de problemas (1 suma, 2 resta, 3 multiplicación, 4 división, 5 mezcla):
+        <input id = "campoTipo" type = "number" min = "1" max = "5" value = "1"></label></p>
+        <p><input id = "botonComenzar" type = "button" value = "Comenzar"></p>
+        <p id = "pregunta"></p>
+        <p><input id = "campoRespuesta" type = "text">
+        <input id = "botonRevisar" type = "button" value = "Revisar"></p>
+    </form>
+    <p id = "mensaje"></p>
+    </body>
+</html>

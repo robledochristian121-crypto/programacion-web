@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+        <meta charset="utf-8">
+        <title>EJERCICIO</title>
+        <script>
+
+            var factor1;
+            var factor2;
+
+            function nuevaPregunta()
+            {
+                factor1 = Math.floor( 1 + Math.random() * 9 );
+                factor2 = Math.floor( 1 + Math.random() * 9 );
+                document.getElementById( "pregunta" ).innerHTML =
+                    "¿Cuánto es " + factor1 + " por " + factor2 + "?";
+                document.getElementById( "campoRespuesta" ).value = "";
+            }
+
+            function revisar()
+            {
+                var respuesta = parseInt( document.getElementById( "campoRespuesta" ).value );
+
+                if ( respuesta == factor1 * factor2 )
+                {
+                    document.getElementById( "mensaje" ).innerHTML = "<em><strong>Muy bien</strong></em>";
+                    nuevaPregunta();
+                }
+                else
+                {
+                    document.getElementById( "mensaje" ).innerHTML = "<em><strong>No. Intente de nuevo.</strong></em>";
+                    document.getElementById( "campoRespuesta" ).value = "";
+                }
+            }
+
+            function iniciar()
+            {
+                document.getElementById( "botonRevisar" ).addEventListener( "click", revisar, false );
+                nuevaPregunta();
+            }
+
+            window.addEventListener( "load", iniciar, false );
+        </script>
+    </head>
+    <body>
+    <h3>EJERCICIO 9.22</h3>
+    <p>Las computadoras desempeñan un papel cada vez mayor en la educación. Escriba un programa que ayude a un estudiante de primaria para que aprenda a multiplicar. Use Math.random para producir dos enteros positivos de un dígito. Después deberá mostrar una pregunta tal como ¿Cuánto es 6 por 7? A continuación, el estudiante escribirá la respuesta en un campo de texto. Su programa deberá verificar la respuesta del estudiante. Si es correcta, muestre la cadena "Muy bien" y genere una nueva pregunta. Si la respuesta es equivocada, muestre la cadena "No. Intente de nuevo." y deje que el estudiante intente la misma pregunta otra vez en forma repetida, hasta que por fin la saque bien. Deberá usarse una función separada para generar cada pregunta nueva. Esta función deberá llamarse una vez cuando la secuencia de comandos empiece su ejecución y cada vez que el usuario responda de manera correcta a la pregunta.</p>
+    <form action = "#">
+        <p id = "pregunta"></p>
+        <p><input id = "campoRespuesta" type = "text">
+        <input id = "botonRevisar" type = "button" value = "Revisar"></p>
+    </form>
+    <p id = "mensaje"></p>
+    </body>
+</html>

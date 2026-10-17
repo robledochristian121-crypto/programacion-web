@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+        <meta charset="utf-8">
+        <title>EJERCICIO</title>
+        <script>
+
+            // base^exponente = base * base^(exponente - 1); caso base: exponente == 1
+            function potencia( base, exponente )
+            {
+                if ( exponente == 1 )
+                    return base;
+                else
+                    return base * potencia( base, exponente - 1 );
+            }
+
+            function mostrarPotencia()
+            {
+                var base = parseFloat( document.getElementById( "campoBase" ).value );
+                var exponente = parseInt( document.getElementById( "campoExponente" ).value );
+
+                document.getElementById( "resultado" ).innerHTML =
+                    "<em><strong>" + base + " elevado a la " + exponente + " es " +
+                    potencia( base, exponente ) + "</strong></em>";
+            }
+
+            function iniciar()
+            {
+                document.getElementById( "botonCalcular" ).addEventListener( "click", mostrarPotencia, false );
+            }
+
+            window.addEventListener( "load", iniciar, false );
+        </script>
+    </head>
+    <body>
+    <h3>EJERCICIO 9.29</h3>
+    <p>Escriba una función recursiva llamada potencia( base, exponente ) que, cuando se invoque, devuelva base elevada al exponente; por ejemplo, potencia(3,4) = 3 * 3 * 3 * 3. Suponga que exponente es un entero mayor o igual a 1. El paso de recursividad utilizaría la relación base^exponente = base * base^(exponente - 1) y la condición de terminación ocurre cuando exponente es igual a 1, ya que base^1 = base. Incorpore esta función en una secuencia de comandos que permita al usuario introducir la base y el exponente.</p>
+    <form action = "#">
+        <p><label>Base: <input id = "campoBase" type = "number" step = "any"></label></p>
+        <p><label>Exponente: <input id = "campoExponente" type = "number" min = "1" value = "1"></label></p>
+        <p><input id = "botonCalcular" type = "button" value = "Calcular"></p>
+    </form>
+    <p id = "resultado"></p>
+    </body>
+</html>

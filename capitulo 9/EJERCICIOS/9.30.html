@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+        <meta charset="utf-8">
+        <title>EJERCICIO</title>
+        
+    </head>
+    <body>
+    <h3>EJERCICIO 9.30</h3>
+    <p>¿Qué hace la siguiente función?</p>
+<pre>
+// El parámetro b debe ser entero
+// positivo para evitar recursividad infinita
+function misterio( a, b )
+{
+   if ( b == 1 )
+      return a;
+   else
+      return a + misterio( a, b - 1 );
+}
+</pre>
+    <ul>
+        <li><em><strong>Multiplica a por b usando sumas repetidas: devuelve a + a + ... + a (b veces), es decir, a * b. Por ejemplo, misterio( 3, 4 ) = 3 + 3 + 3 + 3 = 12.</strong></em></li>
+    </ul>
+    </body>
+</html>

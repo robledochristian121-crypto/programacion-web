@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+        <meta charset="utf-8">
+        <title>EJERCICIO</title>
+        <script>
+
+            function iniciar()
+            {
+                document.getElementById( "botonCalcular" ).addEventListener( "click", mostrarPotencia, false );
+            }
+
+            function mostrarPotencia()
+            {
+                var base = parseInt( document.getElementById( "campoBase" ).value );
+                var exponente = parseInt( document.getElementById( "campoExponente" ).value );
+
+                document.getElementById( "resultado" ).innerHTML =
+                    "<em><strong>" + base + " elevado a la " + exponente + " es " +
+                    potenciaEntera( base, exponente ) + "</strong></em>";
+            }
+
+            function potenciaEntera( base, exponente )
+            {
+                var resultado = 1;
+
+                for ( var i = 1; i <= exponente; ++i )
+                    resultado *= base;
+
+                return resultado;
+            }
+
+            window.addEventListener( "load", iniciar, false );
+        </script>
+    </head>
+    <body>
+    <h3>EJERCICIO 9.13</h3>
+    <p>Escriba una función llamada potenciaEntera( base, exponente ) que devuelva el valor de base elevada al exponente. Por ejemplo, potenciaEntera( 3, 4 ) = 3 * 3 * 3 * 3. Suponga que exponente y base son enteros. La función potenciaEntera debería usar una instrucción for o while para controlar el cálculo. Incorpore esta función en una secuencia de comandos que lea los valores enteros de un formulario de HTML5 para base y exponente, y que realice el cálculo con la función potenciaEntera. El formulario de HTML5 deberá consistir de dos campos de texto y un botón para iniciar el cálculo. El usuario debe interactuar con el programa, escribiendo números en ambos campos de texto y luego haciendo clic en el botón.</p>
+    <form action = "#">
+        <p><label>Base: <input id = "campoBase" type = "text"></label></p>
+        <p><label>Exponente: <input id = "campoExponente" type = "text"></label></p>
+        <p><input id = "botonCalcular" type = "button" value = "Calcular"></p>
+    </form>
+    <p id = "resultado"></p>
+    </body>
+</html>

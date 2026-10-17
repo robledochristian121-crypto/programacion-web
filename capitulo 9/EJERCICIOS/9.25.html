@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div> 
+        <meta charset="utf-8">
+        <title>EJERCICIO</title>
+        <script>
+
+            var numeroSecreto;
+
+            function nuevoNumero()
+            {
+                numeroSecreto = Math.floor( 1 + Math.random() * 1000 );
+            }
+
+            function revisar()
+            {
+                var intento = parseInt( document.getElementById( "campoIntento" ).value );
+                var mensaje;
+
+                if ( intento == numeroSecreto )
+                {
+                    mensaje = "Felicidades. ¡Adivinó el número!";
+                    nuevoNumero();
+                }
+                else if ( intento > numeroSecreto )
+                    mensaje = "Demasiado alto. Intente de nuevo.";
+                else
+                    mensaje = "Demasiado bajo. Intente de nuevo.";
+
+                document.getElementById( "campoIntento" ).value = "";
+                document.getElementById( "mensaje" ).innerHTML = "<em><strong>" + mensaje + "</strong></em>";
+            }
+
+            function iniciar()
+            {
+                document.getElementById( "botonRevisar" ).addEventListener( "click", revisar, false );
+                nuevoNumero();
+            }
+
+            window.addEventListener( "load", iniciar, false );
+        </script>
+    </head>
+    <body>
+    <h3>EJERCICIO 9.25</h3>
+    <p>Escriba una secuencia de comandos que juegue a "adivinar el número" de la siguiente manera: su programa debe elegir el número a adivinar, para lo cual se selecciona un entero aleatorio en el rango de 1 a 1000. La secuencia de comandos muestra el indicador Adivine un número entre 1 y 1000 enseguida de un campo de texto. El jugador escribe su primer intento en el campo de texto y hace clic en un botón para enviarlo a la secuencia de comandos. Si el intento del jugador es incorrecto, su programa deberá mostrar el mensaje Demasiado alto. Intente de nuevo. o Demasiado bajo. Intente de nuevo. para ayudar al jugador a "acercarse" a la respuesta correcta y deberá borrar el campo de texto para que el usuario pueda introducir el siguiente intento. Cuando el usuario introduzca la respuesta correcta, muestre el mensaje Felicidades. ¡Adivinó el número! y borre el campo de texto para que el usuario pueda jugar otra vez.</p>
+    <form action = "#">
+        <p>Adivine un número entre 1 y 1000</p>
+        <p><input id = "campoIntento" type = "text">
+        <input id = "botonRevisar" type = "button" value = "Enviar"></p>
+    </form>
+    <p id = "mensaje"></p>
+    </body>
+</html>

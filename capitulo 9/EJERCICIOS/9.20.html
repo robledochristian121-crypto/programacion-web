@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+        <meta charset="utf-8">
+        <title>EJERCICIO</title>
+        
+    </head>
+    <body>
+    <h3>EJERCICIO 9.20</h3>
+    <p>Escriba una función llamada puntosCalidad que reciba el promedio de un estudiante y devuelva 4 si el promedio es de 90 a 100, 3 si es de 80 a 89, 2 si es de 70 a 79, 1 si es de 60 a 69 y 0 si es menor a 60. Incorpore la función en una secuencia de comandos que lea un valor del usuario.</p>
+    <script>
+
+        function puntosCalidad( promedio )
+        {
+            if ( promedio >= 90 )
+                return 4;
+            else if ( promedio >= 80 )
+                return 3;
+            else if ( promedio >= 70 )
+                return 2;
+            else if ( promedio >= 60 )
+                return 1;
+            else
+                return 0;
+        }
+
+        var promedio = parseFloat( window.prompt( "Escriba el promedio del estudiante:", "0" ) );
+
+        document.writeln( "<ul><li>Promedio: " + promedio + "</li>" +
+            "<li><em><strong>Puntos de calidad: " + puntosCalidad( promedio ) + "</strong></em></li></ul>" );
+
+    </script>
+    </body>
+</html>

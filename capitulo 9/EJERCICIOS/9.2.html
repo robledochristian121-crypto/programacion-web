@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+        <meta charset="utf-8">
+        <title>EJERCICIO AUTOEVALUACIÓN</title>
+        
+    </head>
+    <body>
+    <h3>EJERCICIO DE AUTOEVALUACIÓN 9.2</h3>
+    <p>Para el programa de la figura 9.13, indique el alcance (ya sea alcance global o de función) de cada uno de los siguientes elementos:</p>
+<pre>
+&lt;!DOCTYPE html&gt;
+
+&lt;!-- Ejercicio 9.2: cubo.html --&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;meta charset = "utf-8"&gt;
+      &lt;title&gt;Alcance&lt;/title&gt;
+      &lt;script&gt;
+        var x;
+
+         function salida()
+         {
+            for ( x = 1; x &lt;= 10; x++ )
+               document.writeln( "&lt;p&gt;" + cubo( x ) + "&lt;/p&gt;" );
+         } // fin de la función salida
+
+         function cubo( y )
+         {
+            return y * y * y;
+         } // fin de la función cubo
+
+         window.addEventListener( "load", salida, false );
+      &lt;/script&gt;
+   &lt;/head&gt;&lt;body&gt;&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+    <ul>
+        <li>a) La variable x.<br>
+        <em><strong>Alcance global.</strong></em></li>
+        <li>b) La variable y.<br>
+        <em><strong>Alcance de función.</strong></em></li>
+        <li>c) La función cubo.<br>
+        <em><strong>Alcance global.</strong></em></li>
+        <li>d) La función salida.<br>
+        <em><strong>Alcance global.</strong></em></li>
+    </ul>
+    </body>
+</html>

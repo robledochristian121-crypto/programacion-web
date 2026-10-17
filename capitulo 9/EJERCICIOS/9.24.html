@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+        <meta charset="utf-8">
+        <title>EJERCICIO</title>
+        <script>
+
+            var factor1;
+            var factor2;
+            var correctas = 0;
+            var incorrectas = 0;
+
+            function nuevaPregunta()
+            {
+                factor1 = Math.floor( 1 + Math.random() * 9 );
+                factor2 = Math.floor( 1 + Math.random() * 9 );
+                document.getElementById( "pregunta" ).innerHTML =
+                    "¿Cuánto es " + factor1 + " por " + factor2 + "?";
+                document.getElementById( "campoRespuesta" ).value = "";
+            }
+
+            function respuestaCorrecta()
+            {
+                switch ( Math.floor( 1 + Math.random() * 4 ) )
+                {
+                    case 1: return "Muy bien.";
+                    case 2: return "Excelente.";
+                    case 3: return "Buen trabajo.";
+                    case 4: return "Siga así.";
+                }
+            }
+
+            function respuestaIncorrecta()
+            {
+                switch ( Math.floor( 1 + Math.random() * 4 ) )
+                {
+                    case 1: return "No. Intente de nuevo";
+                    case 2: return "Equivocado. Trate una vez más.";
+                    case 3: return "No se dé por vencido.";
+                    case 4: return "No. Siga intentando.";
+                }
+            }
+
+            function revisar()
+            {
+                var respuesta = parseInt( document.getElementById( "campoRespuesta" ).value );
+                var acerto = respuesta == factor1 * factor2;
+                var mensaje;
+
+                if ( acerto )
+                {
+                    ++correctas;
+                    mensaje = respuestaCorrecta();
+                }
+                else
+                {
+                    ++incorrectas;
+                    mensaje = respuestaIncorrecta();
+                }
+
+                // después de 10 respuestas calcular el porcentaje
+                if ( correctas + incorrectas == 10 )
+                {
+                    var porcentaje = correctas / 10 * 100;
+                    mensaje += "<br>Respuestas correctas: " + porcentaje + "%";
+
+                    if ( porcentaje < 75 )
+                        mensaje += "<br>Pida ayuda adicional a su instructor";
+
+                    // reiniciar el cuestionario para otro estudiante
+                    correctas = 0;
+                    incorrectas = 0;
+                    nuevaPregunta();
+                }
+                else if ( acerto )
+                    nuevaPregunta();
+                else
+                    document.getElementById( "campoRespuesta" ).value = "";
+
+                document.getElementById( "mensaje" ).innerHTML = "<em><strong>" + mensaje + "</strong></em>";
+            }
+
+            function iniciar()
+            {
+                document.getElementById( "botonRevisar" ).addEventListener( "click", revisar, false );
+                nuevaPregunta();
+            }
+
+            window.addEventListener( "load", iniciar, false );
+        </script>
+    </head>
+    <body>
+    <h3>EJERCICIO 9.24</h3>
+    <p>Modifique el programa del ejercicio 9.23 para contar el número de respuestas correctas e incorrectas que escribió el estudiante. Una vez que el estudiante responda 10 preguntas, usted deberá calcular el porcentaje de respuestas correctas. Si el porcentaje es menor del 75 por ciento, muestre Pida ayuda adicional a su instructor y reinicie el cuestionario para que otro estudiante pueda intentarlo.</p>
+    <form action = "#">
+        <p id = "pregunta"></p>
+        <p><input id = "campoRespuesta" type = "text">
+        <input id = "botonRevisar" type = "button" value = "Revisar"></p>
+    </form>
+    <p id = "mensaje"></p>
+    </body>
+</html>

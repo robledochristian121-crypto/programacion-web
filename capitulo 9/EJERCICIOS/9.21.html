@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+        <meta charset="utf-8">
+        <title>EJERCICIO</title>
+        <script>
+
+            var caras = 0;
+            var cruces = 0;
+
+            function arrojar()
+            {
+                return Math.floor( Math.random() * 2 ) == 1; // true = cara, false = cruz
+            }
+
+            function lanzar()
+            {
+                if ( arrojar() )
+                {
+                    ++caras;
+                    document.getElementById( "lado" ).innerHTML = "<em><strong>Salió cara</strong></em>";
+                }
+                else
+                {
+                    ++cruces;
+                    document.getElementById( "lado" ).innerHTML = "<em><strong>Salió cruz</strong></em>";
+                }
+
+                document.getElementById( "resultado" ).innerHTML =
+                    "<em><strong>Caras: " + caras + "<br>Cruces: " + cruces + "</strong></em>";
+            }
+
+            function iniciar()
+            {
+                document.getElementById( "botonLanzar" ).addEventListener( "click", lanzar, false );
+            }
+
+            window.addEventListener( "load", iniciar, false );
+        </script>
+    </head>
+    <body>
+    <h3>EJERCICIO 9.21</h3>
+    <p>Escriba una secuencia de comandos que simule el lanzamiento de monedas. Deje que el programa lance la moneda cada vez que el usuario haga clic en el botón Lanzar. Cuente el número de veces que aparezca cada lado de la moneda. Muestre los resultados. El programa deberá llamar a una función separada de nombre arrojar, que no reciba argumentos y devuelva false para cruz y true para cara.</p>
+    <form action = "#">
+        <input id = "botonLanzar" type = "button" value = "Lanzar">
+    </form>
+    <p id = "lado"></p>
+    <p id = "resultado"></p>
+    </body>
+</html>

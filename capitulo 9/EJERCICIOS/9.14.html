@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+        <meta charset="utf-8">
+        <title>EJERCICIO</title>
+        <script>
+
+            function iniciar()
+            {
+                document.getElementById( "botonRevisar" ).addEventListener( "click", mostrarResultado, false );
+            }
+
+            function mostrarResultado()
+            {
+                var primero = parseInt( document.getElementById( "campoPrimero" ).value );
+                var segundo = parseInt( document.getElementById( "campoSegundo" ).value );
+
+                if ( multiplo( primero, segundo ) )
+                    document.getElementById( "resultado" ).innerHTML =
+                        "<em><strong>" + segundo + " es múltiplo de " + primero + "</strong></em>";
+                else
+                    document.getElementById( "resultado" ).innerHTML =
+                        "<em><strong>" + segundo + " no es múltiplo de " + primero + "</strong></em>";
+            }
+
+            function multiplo( primero, segundo )
+            {
+                return segundo % primero == 0;
+            }
+
+            window.addEventListener( "load", iniciar, false );
+        </script>
+    </head>
+    <body>
+    <h3>EJERCICIO 9.14</h3>
+    <p>Escriba una función llamada multiplo que determine para un par de enteros si el segundo es múltiplo del primero. La función debe recibir dos argumentos enteros y devolver true si el segundo es múltiplo del primero, y false en caso contrario. Incorpore esta función en una secuencia de comandos que reciba como entrada una serie de pares de enteros (un par a la vez). El formulario de HTML5 debe consistir en dos campos de texto y un botón para iniciar el cálculo. El usuario debe interactuar con el programa escribiendo números en ambos textos y luego haciendo clic en el botón.</p>
+    <form action = "#">
+        <p><label>Primer entero: <input id = "campoPrimero" type = "text"></label></p>
+        <p><label>Segundo entero: <input id = "campoSegundo" type = "text"></label></p>
+        <p><input id = "botonRevisar" type = "button" value = "Revisar"></p>
+    </form>
+    <p id = "resultado"></p>
+    </body>
+</html>

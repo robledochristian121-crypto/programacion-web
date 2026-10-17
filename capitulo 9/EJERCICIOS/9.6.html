@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+        <meta charset="utf-8">
+        <title>EJERCICIO AUTOEVALUACIÓN</title>
+        <script>
+
+            function iniciar()
+            {
+                var boton = document.getElementById( "botonCalcular" );
+                boton.addEventListener( "click", mostrarVolumen, false );
+            } // fin de la función iniciar
+
+            function mostrarVolumen()
+            {
+                var campoEntrada = document.getElementById( "campoRadio" );
+                var radio = parseFloat( campoEntrada.value );
+                var resultado = document.getElementById( "resultado" );
+                resultado.innerHTML = "<em><strong>El volumen de la esfera es: " + volumenEsfera( radio ) + "</strong></em>";
+            } // fin de la función mostrarVolumen
+
+            function volumenEsfera( radio )
+            {
+                return ( 4.0 / 3.0 ) * Math.PI * Math.pow( radio, 3 );
+            } // fin de la función volumenEsfera
+
+            window.addEventListener( "load", iniciar, false );
+        </script>
+    </head>
+    <body>
+    <h3>EJERCICIO DE AUTOEVALUACIÓN 9.6</h3>
+    <p>Escriba un programa de JavaScript completo para pedir al usuario el radio de una esfera y luego llame a la función volumenEsfera para calcular y mostrar el volumen de la esfera. Use la instrucción volumen = ( 4.0 / 3.0 ) * Math.PI * Math.pow( radio, 3 ); para calcular el volumen. El usuario debe introducir el radio en el elemento input de HTML del tipo "number" en un elemento form. Proporcione al elemento input el valor de id "campoEntrada". Use un elemento input de tipo "button" en el elemento form para que el usuario pueda iniciar el cálculo.</p>
+    <form action = "#">
+        <p><label>Radio: <input id = "campoRadio" type = "number" step = "any"></label>
+        <input id = "botonCalcular" type = "button" value = "Calcular"></p>
+    </form>
+    <p id = "resultado"><em><strong></strong></em></p>
+    </body>
+</html>

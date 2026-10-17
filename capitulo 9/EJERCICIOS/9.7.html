@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>   
+        <meta charset="utf-8">
+        <title>EJERCICIO</title>
+        <script>
+
+            function iniciar()
+            {
+                document.getElementById( "botonCalcular" ).addEventListener( "click", mostrarArea, false );
+            }
+
+            function mostrarArea()
+            {
+                var radio = parseFloat( document.getElementById( "campoRadio" ).value );
+                document.getElementById( "resultado" ).innerHTML =
+                    "<em><strong>El área del círculo es: " + areaCirculo( radio ) + "</strong></em>";
+            }
+
+            function areaCirculo( radio )
+            {
+                return Math.PI * Math.pow( radio, 2 );
+            }
+
+            window.addEventListener( "load", iniciar, false );
+        </script>
+    </head>
+    <body>
+    <h3>EJERCICIO 9.7</h3>
+    <p>Escriba una secuencia de comandos que use un formulario (form) para obtener el radio de un círculo del usuario y después llame a la función areaCirculo para calcular el área del círculo y mostrar el resultado en un párrafo en la página. Para obtener el número del elemento form, use las técnicas que se muestran en el ejercicio de autoevaluación 9.6.</p>
+    <form action = "#">
+        <p><label>Radio: <input id = "campoRadio" type = "number" step = "any"></label>
+        <input id = "botonCalcular" type = "button" value = "Calcular"></p>
+    </form>
+    <p id = "resultado"></p>
+    </body>
+</html>
