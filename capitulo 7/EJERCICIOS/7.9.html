@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+      <meta charset="utf-8">
+      <title>EJERCICIO 7.9</title>
+   </head>
+   <body>
+      <h3>EJERCICIO 7.9</h3>
+      <p>Identifique y corrija los errores en cada uno de los siguientes segmentos de código. [Nota: puede haber más de un error en cada fragmento; a menos que haya declaraciones presentes, suponga que todas las variables están declaradas e inicializadas correctamente].</p>
+      <ul>
+         <p>a) if ( edad &gt;= 65 );<br>&nbsp;&nbsp;&nbsp;document.writeln( "Edad es mayor o igual que 65" );<br>else<br>&nbsp;&nbsp;&nbsp;document.writeln( "Edad es menor que 65 )";</p>
+         <em><strong>Error 1: el ; después de la condición del if. Con ese punto y coma, el else queda sin su if y es un error de sintaxis.<br>Error 2: las comillas de cierre de la última línea están mal colocadas (debe ser "Edad es menor que 65" );).<br>Corrección:<br>if ( edad &gt;= 65 )<br>&nbsp;&nbsp;&nbsp;document.writeln( "Edad es mayor o igual que 65" );<br>else<br>&nbsp;&nbsp;&nbsp;document.writeln( "Edad es menor que 65" );</strong></em>
+         <p>b) var x = 1, total;<br>while ( x &lt;= 10 )<br>{<br>&nbsp;&nbsp;&nbsp;total += x;<br>&nbsp;&nbsp;&nbsp;++x;<br>}</p>
+         <em><strong>Error: la variable total no se inicializó. Su valor es undefined, y total += x produce NaN.<br>Corrección: var x = 1, total = 0;</strong></em>
+         <p>c) var x = 1;<br>var total = 0;<br>while ( x &lt;= 100 )<br>&nbsp;&nbsp;&nbsp;total += x;<br>&nbsp;&nbsp;&nbsp;++x;</p>
+         <em><strong>Error: faltan las llaves del while. Sin ellas, sólo total += x; forma parte del ciclo y x nunca cambia (ciclo infinito).<br>Corrección:<br>while ( x &lt;= 100 )<br>{<br>&nbsp;&nbsp;&nbsp;total += x;<br>&nbsp;&nbsp;&nbsp;++x;<br>}</strong></em>
+         <p>d) var y = 5;<br>while ( y &gt; 0 )<br>{<br>&nbsp;&nbsp;&nbsp;document.writeln( y );<br>&nbsp;&nbsp;&nbsp;++y;<br>}</p>
+         <em><strong>Error: ++y incrementa y, por lo que nunca llega a 0 (ciclo infinito).<br>Corrección: usar --y; para decrementar la variable.</strong></em>
+      </ul>
+   </body>
+</html>

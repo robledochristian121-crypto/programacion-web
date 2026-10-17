@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+      <meta charset="utf-8">
+      <title>EJERCICIO 7.20</title>
+   </head>
+   <body>
+      <h3>EJERCICIO 7.20</h3>
+      <p>Un palíndromo es un número o una frase de texto que se lee igual al derecho y al revés. Por ejemplo: 12321, 55555, 45554 y 11611. Escriba una secuencia de comandos que lea un entero de cinco dígitos y determine si es un palíndromo. Si el número no es de cinco dígitos, muestre un diálogo alert que indique el problema al usuario y le permita introducir un nuevo valor después de cerrar el diálogo alert.</p>
+      <hr>
+      <script>
+         var numero, d1, d2, d4, d5;
+         var valido = false;
+
+         while ( valido == false )
+         {
+            numero = parseInt( window.prompt( "Escriba un entero de cinco dígitos:", "12321" ) );
+
+            if ( numero >= 10000 )
+            {
+               if ( numero <= 99999 )
+                  valido = true;
+            }
+
+            if ( valido == false )
+               window.alert( "El número debe tener exactamente cinco dígitos. Inténtelo de nuevo." );
+         } 
+
+         d1 = Math.floor( numero / 10000 );      // primer dígito
+         d2 = Math.floor( numero / 1000 ) % 10;  // segundo dígito
+         d4 = Math.floor( numero / 10 ) % 10;    // cuarto dígito
+         d5 = numero % 10;                       // quinto dígito
+
+         if ( d1 == d5 )
+         {
+            if ( d2 == d4 )
+               document.writeln( "<h1>" + numero + " es un palíndromo</h1>" );
+            else
+               document.writeln( "<h1>" + numero + " no es un palíndromo</h1>" );
+         }
+         else
+            document.writeln( "<h1>" + numero + " no es un palíndromo</h1>" );
+      </script>
+   </body>
+</html>

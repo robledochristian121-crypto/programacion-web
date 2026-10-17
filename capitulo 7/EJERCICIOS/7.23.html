@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+      <meta charset="utf-8">
+      <title>EJERCICIO 7.23</title>
+   </head>
+   <body>
+      <h3>EJERCICIO 7.23</h3>
+      <p>Escriba una secuencia de comandos que reciba como entrada un entero cifrado de cuatro dígitos (del ejercicio 7.22) y lo descifre para formar el número original.</p>
+      <hr>
+      <script>
+         var texto, cifrado, d1, d2, d3, d4, o1, o2, o3, o4;
+
+         texto = window.prompt( "Escriba el entero cifrado de cuatro dígitos:", "0189" );
+         cifrado = parseInt( texto );
+         d1 = Math.floor( cifrado / 1000 );
+         d2 = Math.floor( cifrado / 100 ) % 10;
+         d3 = Math.floor( cifrado / 10 ) % 10;
+         d4 = cifrado % 10;
+         o1 = d3;
+         o2 = d4;
+         o3 = d1;
+         o4 = d2;
+         o1 = ( o1 + 3 ) % 10;
+         o2 = ( o2 + 3 ) % 10;
+         o3 = ( o3 + 3 ) % 10;
+         o4 = ( o4 + 3 ) % 10;
+
+         document.writeln( "<p>Entero cifrado: " + texto + "</p>" );
+         document.writeln( "<h1>Número original: " + o1 + o2 + o3 + o4 + "</h1>" );
+      </script>
+   </body>
+</html>

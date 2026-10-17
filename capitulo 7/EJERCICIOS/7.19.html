@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+      <meta charset="utf-8">
+      <title>EJERCICIO 7.19</title>
+   </head>
+   <body>
+      <h3>EJERCICIO 7.19</h3>
+      <p>(Problema del else suelto) Determine la salida de cada uno de los siguientes segmentos de código, cuando x es 9 y y es 11, y cuando x es 11 y y es 9. Observe que el intérprete ignora la sangría en una secuencia de comandos. Además, el intérprete de JavaScript siempre asocia un else con el if anterior, a menos que se le indique de otra forma mediante la colocación de llaves ({}).</p>
+      <ul>
+         <p>a) if ( x &lt; 10 )<br>if ( y &gt; 10 )<br>document.writeln ( "&lt;p&gt;*****&lt;/p&gt;" );<br>else<br>document.writeln( "&lt;p&gt;#####&lt;/p&gt;" );<br>document.writeln( "&lt;p&gt;$$$$$&lt;/p&gt;" );</p>
+         <em><strong>Con la sangría correcta se ve que el else pertenece al if interior y que la última instrucción siempre se ejecuta:<br>if ( x &lt; 10 )<br>&nbsp;&nbsp;&nbsp;if ( y &gt; 10 )<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.writeln( "&lt;p&gt;*****&lt;/p&gt;" );<br>&nbsp;&nbsp;&nbsp;else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.writeln( "&lt;p&gt;#####&lt;/p&gt;" );<br>document.writeln( "&lt;p&gt;$$$$$&lt;/p&gt;" );<br>Cuando x = 9 y y = 11: se imprime ***** y $$$$$<br>Cuando x = 11 y y = 9: sólo se imprime $$$$$</strong></em>
+         <p>b) if ( x &lt; 10 )<br>{<br>if ( y &gt; 10 )<br>document.writeln( "&lt;p&gt;*****&lt;/p&gt;" );<br>}<br>else<br>{<br>document.writeln( "&lt;p&gt;#####&lt;/p&gt;" );<br>document.writeln( "&lt;p&gt;$$$$$&lt;/p&gt;" );<br>}</p>
+         <em><strong>Aquí las llaves hacen que el else pertenezca al if exterior:<br>Cuando x = 9 y y = 11: se imprime *****<br>Cuando x = 11 y y = 9: se imprime ##### y $$$$$</strong></em>
+      </ul>
+   </body>
+</html>

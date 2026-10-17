@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+      <meta charset="utf-8">
+      <title>EJERCICIO 7.18</title>
+   </head>
+   <body>
+      <h3>EJERCICIO 7.18</h3>
+      <p>Sin ejecutar la siguiente secuencia de comandos, determine lo que imprime:<br>var fila = 10;<br>var columna;<br><br>while ( fila &gt;= 1 )<br>{<br>&nbsp;&nbsp;&nbsp;columna = 1;<br>&nbsp;&nbsp;&nbsp;document.writeln( "&lt;p&gt;" );<br><br>&nbsp;&nbsp;&nbsp;while ( columna &lt;= 10 )<br>&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write( fila % 2 == 1 ? "&lt;" : "&gt;" );<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;++columna;<br>&nbsp;&nbsp;&nbsp;} // end while<br><br>&nbsp;&nbsp;&nbsp;--fila;<br>&nbsp;&nbsp;&nbsp;document.writeln( "&lt;/p&gt;" );<br>} // end while</p>
+      <ul>
+         <em><strong>Imprime 10 líneas de 10 símbolos cada una, alternando entre &gt; y &lt;:<br>la primera línea (fila = 10, par) es &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;,<br>la segunda (fila = 9, impar) es &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;,<br>y así sucesivamente hasta la fila 1, que es &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;.<br>(El operador ?: escribe &quot;&lt;&quot; si fila es impar y &quot;&gt;&quot; si es par.)</strong></em>
+      </ul>
+   </body>
+</html>

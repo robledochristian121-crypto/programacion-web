@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+      <meta charset="utf-8">
+      <title>EJERCICIO 7.15</title>
+   </head>
+   <body>
+      <h3>EJERCICIO 7.15</h3>
+      <p>Escriba un algoritmo en pseudocódigo y después una secuencia de comandos que reciba como entrada una serie de 10 números de un solo dígito, determine el mayor de los números y produzca un mensaje que muestre el número más grande. Use las variables contador, numero y mayor.</p>
+      <p><b>Pseudocódigo:</b></p>
+      <pre>contador = 0, mayor = -1
+Mientras contador &lt; 10
+    Pedir un número
+    Si numero &gt; mayor: mayor = numero
+    Sumar 1 a contador
+Mostrar mayor</pre>
+      <hr>
+      <script>
+         var contador; // cuenta los números introducidos
+         var numero;   // el entero más reciente introducido
+         var mayor;    // el número más grande encontrado hasta ahora
+
+         contador = 0;
+         mayor = -1;
+
+         while ( contador < 10 )
+         {
+            numero = parseInt( window.prompt( "Escriba el número " + ( contador + 1 ) + " (un dígito):", "0" ) );
+
+            if ( numero > mayor )
+               mayor = numero;
+
+            ++contador;
+         } // fin de while
+
+         document.writeln( "<h2>El número más grande es " + mayor + "</h2>" );
+      </script>
+   </body>
+</html>

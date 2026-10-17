@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+      <meta charset="utf-8">
+      <title>EJERCICIO 7.21</title>
+   </head>
+   <body>
+      <h3>EJERCICIO 7.21</h3>
+      <p>Escriba una secuencia de comandos que produzca texto de HTML5 que siga mostrando en la ventana de comandos los múltiplos del entero 2 (a saber, 2, 4, 8, 16, 32, 64, etcétera). Su ciclo no debe terminar (es decir, debe crear un ciclo infinito). ¿Qué ocurre cuando ejecuta este programa?</p>
+      <ul>
+         <p>Código (esta página <u>no lo ejecuta</u>, para que no se congele su navegador):<br>var multiplo = 2;<br><br>while ( true )<br>{<br>&nbsp;&nbsp;&nbsp;document.writeln( "&lt;p&gt;" + multiplo + "&lt;/p&gt;" );<br>&nbsp;&nbsp;&nbsp;multiplo = multiplo * 2;<br>} // fin de while</p>
+         <em><strong>¿Qué ocurre?<br>El ciclo nunca termina porque la condición siempre es verdadera. Se muestran 2, 4, 8, 16, 32, 64, ... y los valores siguen duplicándose hasta que, después de 1023 duplicaciones, el número ya no cabe y JavaScript lo representa como Infinity; a partir de ahí se imprime Infinity una y otra vez.<br>La página nunca termina de cargar, el navegador se pone lento o deja de responder y hay que cerrar la pestaña (o detener la secuencia de comandos) para salir.</strong></em>
+      </ul>
+   </body>
+</html>

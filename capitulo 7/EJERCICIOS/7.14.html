@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+      <meta charset="utf-8">
+      <title>EJERCICIO 7.14</title>
+   </head>
+   <body>
+      <h3>EJERCICIO 7.14</h3>
+      <p>Desarrolle una secuencia de comandos que determine el sueldo bruto para cada uno de tres empleados. La empresa paga la &quot;cuota normal&quot; en las primeras 40 horas de trabajo y &quot;cuota y media&quot; en todas las horas que excedan de 40. Reciba como entrada las horas trabajadas y la tarifa por hora de cada empleado, determine el sueldo bruto de cada uno y produzca texto de HTML5. Utilice diálogos prompt para introducir los datos.</p>
+      <hr>
+      <script>
+         var empleado = 1;
+         var horas, tarifa, sueldo;
+
+         while ( empleado <= 3 )
+         {
+            horas = parseFloat( window.prompt( "Empleado " + empleado + " - horas trabajadas:", "0" ) );
+            tarifa = parseFloat( window.prompt( "Empleado " + empleado + " - tarifa por hora:", "0" ) );
+
+            if ( horas <= 40 )
+               sueldo = horas * tarifa;
+            else
+               sueldo = 40 * tarifa + ( horas - 40 ) * tarifa * 1.5;
+
+            document.writeln( "<p>Empleado " + empleado + ": sueldo bruto $" + sueldo.toFixed( 2 ) + "</p>" );
+
+            ++empleado;
+         } 
+      </script>
+   </body>
+</html>

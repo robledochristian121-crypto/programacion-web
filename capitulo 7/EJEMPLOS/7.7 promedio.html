@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <div class="reg">
+        <a class="regresar" href="ejemplos.html">⬅</a>
+        </div>
+        <meta charset="utf-8">
+        <title>PROGRMA DEL PROMEDIO DE UNA CLASE</title>
+        <script>
+            var total;
+            var conta;
+            var calif;
+            var valcalif;
+            var promedio;
+            total = 0;
+            conta = 1;
+            while (conta <= 10){
+                calif = window.prompt("Escriba una calificación entera:","0");
+                valcalif = parseInt(calif);
+                total = total + valcalif;
+                conta = conta + 1;
+            }
+            promedio = total / 10;
+            document.writeln("<h1>El promedio de la clase es " + promedio + "</h1");
+        </script>
+    </head><body></body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+      <meta charset="utf-8">
+      <title>EJERCICIO 7.17</title>
+   </head>
+   <body>
+      <h3>EJERCICIO 7.17</h3>
+      <p>Utilizando una metodología similar a la del ejercicio 7.15, encuentre los dos valores más grandes de los 10 que se introdujeron. [Nota: puede introducir cada número sólo una vez].</p>
+     
+      <hr>
+      <script>
+         var contador = 0;
+         var numero;
+         var mayor = -1;   // el más grande hasta ahora
+         var segundo = -1; // el segundo más grande hasta ahora
+
+         while ( contador < 10 )
+         {
+            numero = parseInt( window.prompt( "Escriba el número " + ( contador + 1 ) + " (un dígito):", "0" ) );
+
+            if ( numero > mayor )
+            {
+               segundo = mayor;
+               mayor = numero;
+            }
+            else if ( numero > segundo )
+               segundo = numero;
+
+            ++contador;
+         } // fin de while
+
+         document.writeln( "<p>El número más grande es " + mayor + "</p>" );
+         document.writeln( "<p>El segundo más grande es " + segundo + "</p>" );
+      </script>
+   </body>
+</html>

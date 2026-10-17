@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+      <meta charset="utf-8">
+      <title>EJERCICIO 7.13</title>
+   </head>
+   <body>
+      <h3>EJERCICIO 7.13</h3>
+      <p>Una empresa paga a sus vendedores mediante comisiones: $200 por semana, más el 9 por ciento de sus ventas brutas de esa semana. Valores de los artículos: 1 = 239.99, 2 = 129.75, 3 = 99.95, 4 = 350.89. Desarrolle una secuencia de comandos que reciba como entrada los artículos vendidos por un vendedor durante la última semana, calcule sus ingresos y produzca texto de HTML5 que los muestre.</p>
+      <hr>
+      <script>
+         var articulo, cantidad, precio;
+         var ventas = 0, ingresos;
+
+         articulo = parseInt( window.prompt( "Número de artículo vendido (1-4, -1 para terminar):", "-1" ) );
+
+         while ( articulo != -1 )
+         {
+            cantidad = parseInt( window.prompt( "Cantidad vendida del artículo " + articulo + ":", "1" ) );
+
+            precio = 0;
+            if ( articulo == 1 )
+               precio = 239.99;
+            if ( articulo == 2 )
+               precio = 129.75;
+            if ( articulo == 3 )
+               precio = 99.95;
+            if ( articulo == 4 )
+               precio = 350.89;
+
+            if ( precio == 0 )
+               window.alert( "Número de artículo no válido" );
+            else
+               ventas += cantidad * precio;
+
+            articulo = parseInt( window.prompt( "Número de artículo vendido (1-4, -1 para terminar):", "-1" ) );
+         } // fin de while
+
+         ingresos = 200 + 0.09 * ventas;
+
+         document.writeln( "<p>Ventas brutas: $" + ventas.toFixed( 2 ) + "</p>" );
+         document.writeln( "<h2>Ingresos de la semana: $" + ingresos.toFixed( 2 ) + "</h2>" );
+      </script>
+   </body>
+</html>

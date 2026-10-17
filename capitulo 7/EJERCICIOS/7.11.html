@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+      <meta charset="utf-8">
+      <title>EJERCICIO 7.11</title>
+   </head>
+   <body>
+      <h3>EJERCICIO 7.11</h3>
+      <hr>
+      <script>
+         var kilometros, litros;
+         var totalKm = 0, totalLitros = 0, viaje = 0;
+
+         kilometros = parseFloat( window.prompt( "Kilómetros conducidos (-1 para terminar):", "-1" ) );
+
+         while ( kilometros != -1 )
+         {
+            litros = parseFloat( window.prompt( "Litros usados:", "1" ) );
+
+            viaje = viaje + 1;
+            totalKm += kilometros;
+            totalLitros += litros;
+
+            document.writeln( "<p>Viaje " + viaje + ": " + ( kilometros / litros ).toFixed( 2 ) + " km/l</p>" );
+            document.writeln( "<p><b>Total acumulado: " + ( totalKm / totalLitros ).toFixed( 2 ) + " km/l</b></p>" );
+
+            kilometros = parseFloat( window.prompt( "Kilómetros conducidos (-1 para terminar):", "-1" ) );
+         } 
+      </script>
+   </body>
+</html>

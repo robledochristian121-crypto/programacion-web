@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+      <meta charset="utf-8">
+      <title>EJERCICIO 7.22</title>
+   </head>
+   <body>
+      <h3>EJERCICIO 7.22</h3>
+      <p>Una compañía desea transmitir datos por teléfono, pero le preocupa que sus teléfonos puedan estar intervenidos. Todos sus datos se transmiten como enteros de cuatro dígitos. Escriba una secuencia de comandos que lea un entero de cuatro dígitos introducido por el usuario en un diálogo prompt y lo cifre de la siguiente manera: reemplace cada dígito con (la suma de ese dígito más 7) módulo 10. Después intercambie el primer dígito con el tercero, e intercambie el segundo dígito con el cuarto. Luego produzca texto de HTML5 que muestre el entero cifrado.</p>
+      <hr>
+      <script>
+         var numero, d1, d2, d3, d4, c1, c2, c3, c4;
+
+         numero = parseInt( window.prompt( "Escriba un entero de cuatro dígitos:", "1234" ) );
+
+         d1 = Math.floor( numero / 1000 );
+         d2 = Math.floor( numero / 100 ) % 10;
+         d3 = Math.floor( numero / 10 ) % 10;
+         d4 = numero % 10;
+         d1 = ( d1 + 7 ) % 10;
+         d2 = ( d2 + 7 ) % 10;
+         d3 = ( d3 + 7 ) % 10;
+         d4 = ( d4 + 7 ) % 10;
+         c1 = d3;
+         c2 = d4;
+         c3 = d1;
+         c4 = d2;
+
+         document.writeln( "<p>Número original: " + numero + "</p>" );
+         document.writeln( "<h1>Entero cifrado: " + c1 + c2 + c3 + c4 + "</h1>" );
+      </script>
+   </body>
+</html>
