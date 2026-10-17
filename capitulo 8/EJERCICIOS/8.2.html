@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+        <meta charset="utf-8">
+        <title>EJERCICIO AUTOEVALUACIÓN</title>
+    </head>
+    <body>
+    <h3>EJERCICIO DE AUTOEVALUACIÓN 8.2</h3>
+    <p>Escriba una instrucción o un conjunto de instrucciones en JavaScript para realizar cada una de las siguientes tareas:</p>
+    <ul>
+        <li>a) Sumar los enteros impares entre 1 y 99. Utilice una instrucción for. Suponga que se han declarado las variables suma y cuenta.<br>
+        <em><strong>suma = 0;<br>
+        for ( cuenta = 1; cuenta &lt;= 99; cuenta += 2 )<br>
+        &nbsp;&nbsp;&nbsp;suma += cuenta;</strong></em></li>
+        <li>b) Calcular el valor de 2.5 elevado a la potencia de 3. Use el método pow.<br>
+        <em><strong>Math.pow( 2.5, 3 );</strong></em></li>
+        <li>c) Imprimir los enteros del 1 al 20 mediante el uso de un ciclo while y la variable contador x. Suponga que la variable x se ha declarado, pero no se ha inicializado. Imprima solamente cinco enteros por línea.<br>
+        <em><strong>x = 1;<br>
+        document.writeln( "&lt;p&gt;" );<br>
+        while ( x &lt;= 20 ) {<br>
+        &nbsp;&nbsp;&nbsp;document.write( x + " " );<br>
+        &nbsp;&nbsp;&nbsp;if ( x % 5 == 0 )<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write( "&lt;/p&gt;&lt;p&gt;" );<br>
+        &nbsp;&nbsp;&nbsp;++x;<br>
+        }</strong></em></li>
+        <li>d) Repita el ejercicio 8.2 (c), pero ahora use una instrucción for.<br>
+        <em><strong>document.writeln( "&lt;p&gt;" );<br>
+        for ( x = 1; x &lt;= 20; x++ ) {<br>
+        &nbsp;&nbsp;&nbsp;document.write( x + " " );<br>
+        &nbsp;&nbsp;&nbsp;if ( x % 5 == 0 )<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write( "&lt;/p&gt;&lt;p&gt;" );<br>
+        }<br>
+        document.writeln( "&lt;/p&gt;" );</strong></em></li>
+    </ul>
+    </body>
+</html>

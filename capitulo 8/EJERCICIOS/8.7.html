@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+        <meta charset="utf-8">
+        <title>EJERCICIO</title>
+    </head>
+    <body>
+    <h3>EJERCICIO 8.7</h3>
+    <p>Escriba una secuencia de comandos que calcule el producto de los enteros impares del 1 al 15 y después imprima texto de HTML5 que muestre los resultados.</p>
+    <script>
+
+        var producto = 1;
+
+        for ( var i = 1; i <= 15; i += 2 )
+            producto *= i;
+
+        document.writeln( "<ul><li><em><strong>El producto de los enteros impares del 1 al 15 es " +
+            producto + "</strong></em></li></ul>" );
+
+    </script>
+    </body>
+</html>

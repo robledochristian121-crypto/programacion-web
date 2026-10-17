@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+        <meta charset="utf-8">
+        <title>EJERCICIO</title>
+    </head>
+    <body>
+    <h3>EJERCICIO 8.4</h3>
+    <p>Encuentre el error en cada uno de los siguientes segmentos de código. [Nota: puede haber más de un error].</p>
+    <ul>
+        <li>a) For ( x = 100, x &gt;= 1, ++x )<br>
+        &nbsp;&nbsp;&nbsp;document.writeln( x );<br>
+        <em><strong>Errores: for debe ir en minúsculas; las expresiones del encabezado se separan con punto y coma (;) y no con comas; y ++x debe ser --x para contar hacia atrás.<br>
+        Corrección: for ( x = 100; x &gt;= 1; --x )</strong></em></li>
+        <li>b) El siguiente código debe imprimirse sin importar si el valor entero es par o impar:<br>
+        switch ( valor % 2 )<br>
+        {<br>
+        &nbsp;&nbsp;case 0:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;document.writeln( "Entero par" );<br>
+        &nbsp;&nbsp;case 1:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;document.writeln( "Entero impar" );<br>
+        }<br>
+        <em><strong>Error: Falta una instrucción break en el case 0; cuando el valor es par también se imprime "Entero impar".<br>
+        Corrección: Agregar break; después de document.writeln( "Entero par" );</strong></em></li>
+        <li>c) El siguiente código debe imprimir los enteros impares del 19 al 1:<br>
+        for ( x = 19; x &gt;= 1; x += 2 )<br>
+        &nbsp;&nbsp;&nbsp;document.writeln( x );<br>
+        <em><strong>Error: x += 2 aumenta x en lugar de disminuirlo, por lo que el ciclo es infinito.<br>
+        Corrección: for ( x = 19; x &gt;= 1; x -= 2 )</strong></em></li>
+        <li>d) El siguiente código debe imprimir los enteros pares del 2 al 100:<br>
+        contador = 2;<br>
+        do {<br>
+        &nbsp;&nbsp;&nbsp;document.writeln( contador );<br>
+        &nbsp;&nbsp;&nbsp;contador += 2;<br>
+        } While ( contador &lt; 100 );<br>
+        <em><strong>Errores: While debe ir en minúsculas (while); y la condición contador &lt; 100 provoca que no se imprima el 100.<br>
+        Corrección: } while ( contador &lt;= 100 );</strong></em></li>
+    </ul>
+    </body>
+</html>

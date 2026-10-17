@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+        <meta charset="utf-8">
+        <title>EJERCICIO</title>
+    </head>
+    <body>
+    <h3>EJERCICIO 8.6</h3>
+    <p>Escriba una secuencia de comandos que encuentre el menor de varios enteros no negativos. Suponga que el primer valor leído especifica el número de valores que el usuario introducirá.</p>
+    <script>
+
+        var cantidad = parseInt( window.prompt( "¿Cuántos valores va a introducir?", "0" ) );
+        var valor;
+        var menor;
+
+        for ( var i = 1; i <= cantidad; ++i )
+        {
+            valor = parseInt( window.prompt( "Escriba el valor " + i + ":", "0" ) );
+
+            if ( i == 1 )
+                menor = valor;
+            else if ( valor < menor )
+                menor = valor;
+        }
+
+        document.writeln( "<ul><li><em><strong>El menor es " + menor + "</strong></em></li></ul>" );
+
+    </script>
+    </body>
+</html>

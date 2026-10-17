@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+        <meta charset="utf-8">
+        <title>EJERCICIO</title>
+        <style type = "text/css">
+            table         { width: 300px;
+                            border-collapse: collapse;
+                            background-color: lightblue; }
+            table, td, th { border: 1px solid black;
+                            padding: 4px; }
+            th            { text-align: left;
+                            color: white;
+                            background-color: darkblue; }
+            tr.filaimpar  { background-color: white; }
+        </style>
+    </head>
+    <body>
+    <h3>EJERCICIO 8.8</h3>
+    <p>Modifique el programa de interés compuesto de la figura 8.6, repitiendo sus pasos para las tasas de interés del 5, 6, 7, 8, 9 y 10 por ciento. Use una instrucción for para variar la tasa de interés. Use una tabla separada para cada tasa.</p>
+    <script>
+
+        var monto;
+        var principal = 1000.00;
+
+        for ( var porcentaje = 5; porcentaje <= 10; ++porcentaje )
+        {
+            var tasa = porcentaje / 100;
+
+            document.writeln( "<table>" );
+            document.writeln( "<caption>Inter&eacute;s compuesto al " + porcentaje + "%</caption>" );
+            document.writeln( "<thead><tr><th>A&ntilde;o</th>" );
+            document.writeln( "<th>Monto en dep&oacute;sito</th></tr></thead><tbody>" );
+
+            for ( var anio = 1; anio <= 10; ++anio )
+            {
+                monto = principal * Math.pow( 1.0 + tasa, anio );
+
+                if ( anio % 2 !== 0 )
+                    document.writeln( "<tr class='filaimpar'><td>" + anio +
+                        "</td><td>" + monto.toFixed( 2 ) + "</td></tr>" );
+                else
+                    document.writeln( "<tr><td>" + anio +
+                        "</td><td>" + monto.toFixed( 2 ) + "</td></tr>" );
+            }
+
+            document.writeln( "</tbody></table><br>" );
+        }
+
+    </script>
+    </body>
+</html>

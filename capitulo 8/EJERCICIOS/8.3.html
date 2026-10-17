@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+        <meta charset="utf-8">
+        <title>EJERCICIO AUTOEVALUACIÓN</title>
+    </head>
+    <body>
+    <h3>EJERCICIO DE AUTOEVALUACIÓN 8.3</h3>
+    <p>Encuentre el error en cada uno de los siguientes segmentos de código, y explique cómo corregirlo:</p>
+    <ul>
+        <li>a) x = 1;<br>
+        while ( x &lt;= 10 );<br>
+        &nbsp;&nbsp;&nbsp;++x;<br>
+        }<br>
+        <em><strong>Error: El punto y coma después del encabezado while provoca un ciclo infinito; además falta una llave izquierda.<br>
+        Corrección: Reemplazar el punto y coma por una llave izquierda ({), o eliminar tanto el punto y coma (;) como la llave derecha (}).</strong></em></li>
+        <li>b) switch ( n )<br>
+        {<br>
+        &nbsp;&nbsp;case 1:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;document.writeln( "El n&amp;uacute;mero es 1" );<br>
+        &nbsp;&nbsp;case 2:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;document.writeln( "El n&amp;uacute;mero es 2" );<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+        &nbsp;&nbsp;default:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;document.writeln( "El n&amp;uacute;mero no es 1 ni 2" );<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+        }<br>
+        <em><strong>Error: Falta una instrucción break en las instrucciones del primer case.<br>
+        Corrección: Agregue una instrucción break al final de las instrucciones para el primer case. Cabe mencionar que esta omisión no es necesariamente un error, si desea que la instrucción del case 2: se ejecute siempre que lo haga la instrucción del case 1:.</strong></em></li>
+        <li>c) El siguiente código debe imprimir los valores 1 a 10:<br>
+        n = 1;<br>
+        while ( n &lt; 10 )<br>
+        &nbsp;&nbsp;&nbsp;document.writeln( n++ );<br>
+        <em><strong>Error: Se está utilizando un operador relacional inadecuado en la condición de continuación de la instrucción de repetición while.<br>
+        Corrección: Use &lt;= en vez de &lt;, o cambie el 10 a 11.</strong></em></li>
+    </ul>
+    </body>
+</html>

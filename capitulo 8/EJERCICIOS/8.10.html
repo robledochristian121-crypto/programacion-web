@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    <div class="reg">
+        <a class="regresar" href="ejercicios.html">⬅</a>
+    </div>
+        <meta charset="utf-8">
+        <title>EJERCICIO</title>
+    </head>
+    <body>
+    <h3>EJERCICIO 8.10</h3>
+    <p>(Canción "Los Doce Días de Navidad") Escriba una secuencia de comandos que utilice estructuras de repetición y un switch para imprimir la canción "Los Doce Días de Navidad".</p>
+    <script>
+
+        var dia;
+        var regalo;
+        var ordinal;
+
+        for ( dia = 1; dia <= 12; ++dia )
+        {
+            switch ( dia )
+            {
+                case 1:  ordinal = "primer"; break;
+                case 2:  ordinal = "segundo"; break;
+                case 3:  ordinal = "tercer"; break;
+                case 4:  ordinal = "cuarto"; break;
+                case 5:  ordinal = "quinto"; break;
+                case 6:  ordinal = "sexto"; break;
+                case 7:  ordinal = "séptimo"; break;
+                case 8:  ordinal = "octavo"; break;
+                case 9:  ordinal = "noveno"; break;
+                case 10: ordinal = "décimo"; break;
+                case 11: ordinal = "undécimo"; break;
+                case 12: ordinal = "duodécimo"; break;
+            }
+
+            document.writeln( "<p><em><strong>El " + ordinal + " día de Navidad mi amor verdadero me dio:</strong></em><br>" );
+
+            for ( regalo = dia; regalo >= 1; --regalo )
+            {
+                switch ( regalo )
+                {
+                    case 1:  document.writeln( "una perdiz en un peral<br>" ); break;
+                    case 2:  document.writeln( "dos tórtolas<br>" ); break;
+                    case 3:  document.writeln( "tres gallinas francesas<br>" ); break;
+                    case 4:  document.writeln( "cuatro pájaros cantores<br>" ); break;
+                    case 5:  document.writeln( "cinco anillos de oro<br>" ); break;
+                    case 6:  document.writeln( "seis gansos poniendo huevos<br>" ); break;
+                    case 7:  document.writeln( "siete cisnes nadando<br>" ); break;
+                    case 8:  document.writeln( "ocho doncellas ordeñando<br>" ); break;
+                    case 9:  document.writeln( "nueve damas bailando<br>" ); break;
+                    case 10: document.writeln( "diez señores saltando<br>" ); break;
+                    case 11: document.writeln( "once gaiteros tocando<br>" ); break;
+                    case 12: document.writeln( "doce tamborileros tocando<br>" ); break;
+                }
+            }
+
+            document.writeln( "</p>" );
+        }
+
+    </script>
+    </body>
+</html>
